@@ -1,4 +1,3 @@
 # Software Engineering
-## Colegio Secundario Neuland
-###### by Daniel Glinka
+by Daniel Glinka
 ---
