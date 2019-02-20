@@ -11,13 +11,19 @@ function setup() {
   string twitter = "@k4itsh"
   string github = "github.com/kaitsh"
 }
-```
+`****
 ---
 # Inhalte
 
 +++
 
 * Aufbau von Rechnern
+** CPU
+** RAM
+
+* Wie rechnet eine CPU
+** Bit/Byte
+** ALU
 
 +++
 
@@ -74,6 +80,8 @@ function setup() {
 
 ## Information - Daten
 
++++
+
 * Information --> Abstraktion (Daniel Glinka)
 * Daten --> Representation (01000100011000010110111001101001011001010110110000100000011001110110110001101001011011100110101101100001)
 
@@ -101,7 +109,6 @@ function setup() {
 
 * 1 Byte (B) = 8 Bit (b)
 
-z.B.
 * File = langer byte string
 * Datei mit 756 B = 6048 b
 
