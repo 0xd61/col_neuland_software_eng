@@ -1,138 +1,153 @@
 # Software Engineering
 by Daniel Glinka
 ---
-## Über mich
 
-```Java
-function setup() {
-  string name = "daniel"
-  int alter = 26
-  string beruf = "software ingenieur"
-  string twitter = "@k4itsh"
-  string github = "github.com/kaitsh"
-}
-```
+# Programmieren
 
 ---
-# Inhalte
-
-+++
-
-- Aufbau von Rechnern
- - CPU
- - RAM
-
-- Wie rechnet eine CPU
- - Bit/Byte
- - ALU
-
-+++
-
-- Zeichencodierungen
-
-+++
-
-- Programmierung
-  - Variablen, Operatoren
-  - Kontrollstrukturen
-  - Funktionen
-  - Datenstrukturen
-
-+++
-
-- Vorschläge?
-
----
-
-# Aufbau von Rechnern
-
-+++
-
-## Erwartungen an Computer
-
-+++
-
-- Datenverarbeitung
-- Lösen von komplexen Aufgaben
-- Ein/Ausgabe
-- Betriebssystem ermöglicht Basisfunktionalitäten
-
-+++
 
 ## Aufbau
 
 +++
 
-- CPU (Central Processing Unit) + FPU (Floating Point Unit)
-- ROM (Read Only Memory)
-- RAM (Random Access Memory)
-- System-Bus
-- Verschiedene Controller
+- Abfolge von Anweisungen
+- "Rezept"
 
 +++
 
-## CPU
+### Beispiel (Java)
+
+```java
+nameAnweisung1();
+nameAnweisung2(parameter);
+nameAnweisung3(parameter1, parameter2);
+
+nameAnweisung4(); nameAnweisung5(); 
+```
 
 +++
-- Lädt Information/Befehle aus Hauptspeicher und führt sie aus
-- Kontrolliert alle Aktionen
+
+### Beispiel (Java)
+
+```java
+
+print("Hallo "); print("Welt!");
+
+```
+
++++
+### Beispiel (Python)
+
+```python
+
+print("Hallo ")
+print("Welt!")
+
+```
++++
+
+Alle Anweisungen findet man [hier](https://processing.org/reference/)
+
++++
 
 ---
 
-## Information - Daten
+# Processing
 
 +++
 
-- Information --> Abstraktion (Daniel Glinka)
-- Daten --> Representation (01000100011000010110111001101001011001010110110000100000011001110110110001101001011011100110101101100001)
-
-- Information = (Daten + Meta Data)
-
-+++
-
-## Bit
-
-- Binary Digit
-- Basiseinheit
-- hat 2 Zustände (an - aus, 0 - 1, true - false, ...)
+- [https://processing.org](https://processing.org/)
+- Java
+- [Referenz](https://processing.org/reference/)
 
 +++
 
-## Bitstring
-
-- Array von Bits
-- Computer arbeitet ausschließlich mit Bitstrings
-- 32 Bit Architektur, 64 Bit Architektur,... (bus width)
-
-+++
-
-## Bytes
-
-- 1 Byte (B) = 8 Bit (b)
-
-- File = langer byte string
-- Datei mit 756 B = 6048 b
-
-+++
-
-| Name | Symbol | Wert               |
-| ---- | -----  | ----               |
-| kibi | Ki     | 1024^1 = 1 024     |
-| mebi | Mi     | 1024^2 = 1 048 576 |
-| gibi | Gi     | 1024^3 = ...       |
-| tebi | Ti     | ...                |
-| pebi | Pi     |                    |
-| exbi | Ei     |                    |
-| zebi | Zi     |                    |
-| yobi | Yi     |                    |
-
-+++
-
-512 GB Festplatte => 512*10^9 Bytes, aber!
-512 GB / 1024 / 1024 / 1024 = 476 GiBytes
+![Processing UI](assets/img/Processing_UI.png)
 
 ---
 
-## Boolsche Algebra
+# Getting Started
 
-Wie rechnet eine CPU?
++++
+
+## Weihnachtsbaum
+
+Schreibe ein Programm, das das folgende Muster in der Konsole ausgibt:
+
+```bash
+      *
+     ***
+    *****
+   *******
+  *********
+ ***********
+*************
+     ***
+```
+
+###### Tipp:
+- Es gibt 2 Anweisungen, mit denen Text in der Konsole ausgegeben wird.
+- Sternchen und Leerzeichen helfen weiter ;-)
+
++++
+
+## Perlenkette
+
+Programmiere das angegebene Bild mithilfe der grafischen Grundelemente von Processing:
+
+![Perlenkette](assets/img/Processing_UI.png)
+
+###### Tipp:
+- Lies den Ellipsen Befehl in der Referenz nach
+- Du kannst die Bildschirm größe mit `size(x,y)` festlegen
+
++++
+
+## Grafische Elemente
+
+```java
+
+// Die Größe des grafischen Ausgabefensters wird auf 450 Pixel
+// in der Breite und 320 Pixel in der Höhe festgelegt.
+// Die Hintergrundfarbe ist weiß.
+size(450, 320);
+background(255);
+
+// Die grafischen Grundelemente im angegebenen Bild werden von links
+// nach rechts gezeichnet. Dazu muss für jedes Element zuvor die
+// Füllfarbe und Linienfarbe spezifiziert werden.
+
+// Das rote Rechteck
+stroke(255, 0, 0);         // Linienfarbe ist blau
+fill(255, 0, 0);           // Füllfarbe ist blau
+rect(10, 10, 100, 300);
+
+// Der grüne Kreis
+stroke(0, 255, 0);
+fill(0, 255, 0);
+ellipse(200, 160, 100, 100);
+
+// Die blaue Linie
+strokeWeight(10);          // Strichstärke auf 10 Pixel setzen
+stroke(0, 0, 255);
+line(310, 10, 310, 300);
+
+// Das gelbe Dreieck
+strokeWeight(1);
+stroke(255, 255, 0);
+fill(255, 255, 0);
+triangle(400, 10,          // Punkt oben
+         370, 310,         // Punkt unten links
+         440, 310);        // Punkt unten rechts
+
+```
++++
+
+## Ghettoblaster
+
+Programmiere in Processing die Zeichnung eines Ghettoblasters. Er soll in dieser Formgestaltet werden:
+
+![Ghettoblaster](assets/img/Ghettoblaster.png)
+
+###### Tipp:
+- Erstelle eine Skizze mit Koordinatensystem (Nullpunkt ist oben links)
