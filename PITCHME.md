@@ -28,19 +28,19 @@ function setup() {
 
 +++
 
-* Zeichencodierungen
+- Zeichencodierungen
 
 +++
 
-* Programmierung
-  ** Variablen, Operatoren
-  ** Kontrollstrukturen
-  ** Funktionen
-  ** Datenstrukturen
+- Programmierung
+  - Variablen, Operatoren
+  - Kontrollstrukturen
+  - Funktionen
+  - Datenstrukturen
 
 +++
 
-* Vorschläge?
+- Vorschläge?
 
 ---
 
@@ -52,10 +52,10 @@ function setup() {
 
 +++
 
-* Datenverarbeitung
-* Lösen von komplexen Aufgaben
-* Ein/Ausgabe
-* Betriebssystem ermöglicht Basisfunktionalitäten
+- Datenverarbeitung
+- Lösen von komplexen Aufgaben
+- Ein/Ausgabe
+- Betriebssystem ermöglicht Basisfunktionalitäten
 
 +++
 
@@ -63,19 +63,19 @@ function setup() {
 
 +++
 
-* CPU (Central Processing Unit) + FPU (Floating Point Unit)
-* ROM (Read Only Memory)
-* RAM (Random Access Memory)
-* System-Bus
-* Verschiedene Controller
+- CPU (Central Processing Unit) + FPU (Floating Point Unit)
+- ROM (Read Only Memory)
+- RAM (Random Access Memory)
+- System-Bus
+- Verschiedene Controller
 
 +++
 
 ## CPU
 
 +++
-* Lädt Information/Befehle aus Hauptspeicher und führt sie aus
-* Kontrolliert alle Aktionen
+- Lädt Information/Befehle aus Hauptspeicher und führt sie aus
+- Kontrolliert alle Aktionen
 
 ---
 
@@ -83,35 +83,35 @@ function setup() {
 
 +++
 
-* Information --> Abstraktion (Daniel Glinka)
-* Daten --> Representation (01000100011000010110111001101001011001010110110000100000011001110110110001101001011011100110101101100001)
+- Information --> Abstraktion (Daniel Glinka)
+- Daten --> Representation (01000100011000010110111001101001011001010110110000100000011001110110110001101001011011100110101101100001)
 
-* Information = (Daten + Meta Data)
+- Information = (Daten + Meta Data)
 
 +++
 
 ## Bit
 
-* Binary Digit
-* Basiseinheit
-* hat 2 Zustände (an - aus, 0 - 1, true - false, ...)
+- Binary Digit
+- Basiseinheit
+- hat 2 Zustände (an - aus, 0 - 1, true - false, ...)
 
 +++
 
 ## Bitstring
 
-* Array von Bits
-* Computer arbeitet ausschließlich mit Bitstrings
-* 32 Bit Architektur, 64 Bit Architektur,... (bus width)
+- Array von Bits
+- Computer arbeitet ausschließlich mit Bitstrings
+- 32 Bit Architektur, 64 Bit Architektur,... (bus width)
 
 +++
 
 ## Bytes
 
-* 1 Byte (B) = 8 Bit (b)
+- 1 Byte (B) = 8 Bit (b)
 
-* File = langer byte string
-* Datei mit 756 B = 6048 b
+- File = langer byte string
+- Datei mit 756 B = 6048 b
 
 +++
 
