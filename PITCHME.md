@@ -18,13 +18,13 @@ function setup() {
 
 +++
 
-* Aufbau von Rechnern
-  ** CPU
-  ** RAM
+- Aufbau von Rechnern
+ - CPU
+ - RAM
 
-* Wie rechnet eine CPU
-  ** Bit/Byte
-  ** ALU
+- Wie rechnet eine CPU
+ - Bit/Byte
+ - ALU
 
 +++
 
