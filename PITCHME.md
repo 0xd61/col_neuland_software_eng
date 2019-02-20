@@ -19,12 +19,12 @@ function setup() {
 +++
 
 * Aufbau von Rechnern
-** CPU
-** RAM
+  ** CPU
+  ** RAM
 
 * Wie rechnet eine CPU
-** Bit/Byte
-** ALU
+  ** Bit/Byte
+  ** ALU
 
 +++
 
@@ -33,10 +33,10 @@ function setup() {
 +++
 
 * Programmierung
-** Variablen, Operatoren
-** Kontrollstrukturen
-** Funktionen
-** Datenstrukturen
+  ** Variablen, Operatoren
+  ** Kontrollstrukturen
+  ** Funktionen
+  ** Datenstrukturen
 
 +++
 
