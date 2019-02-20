@@ -95,7 +95,7 @@ Programmiere das angegebene Bild mithilfe der grafischen Grundelemente von Proce
 
 ##### Tipp:
 - Lies den Ellipsen Befehl in der Referenz nach
-- Du kannst die Bildschirm größe mit `size(x,y)` festlegen
+- Du kannst die Bildschirmgröße mit `size(x,y)` festlegen
 
 +++
 
