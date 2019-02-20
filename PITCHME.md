@@ -58,7 +58,7 @@ Alle Anweisungen findet man [hier](https://processing.org/reference/)
 
 ---
 
-# Getting Started
+# Übungen
 
 +++
 
