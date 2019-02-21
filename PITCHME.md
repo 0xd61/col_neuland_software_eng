@@ -363,7 +363,7 @@ In der Formel bezeichnet _h_ die Körpergröße in cm und _w_ das Körpergewicht
 
 ## Tic-Tac-Toe Spielfeld
 
-Schreibe ein Programm, das ein leeres Spielfeld für Tic-Tac-Toe erzeugt und darstellt. Machedabei Gebrauch von geeigneten Variablen!
+Schreibe ein Programm, das ein leeres Spielfeld für Tic-Tac-Toe erzeugt und darstellt. Mache dabei Gebrauch von geeigneten Variablen!
 
 ![Tic-Tac-Toe](assets/img/Tic-Tac-Toe-Spielfeld.png)
 
