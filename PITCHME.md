@@ -2,149 +2,117 @@
 by Daniel Glinka
 ---
 
-# Programmieren
+# Variablen
+
+- Platzhalter
+- Programme dynamisch gestalten
+- Reservierter Speicherbereich
+- Bezeichner kann selbst gewählt werden
 
 +++
 
 ## Aufbau
 
-- Abfolge von Anweisungen
-- "Rezept"
+- Name (Bezeichner)
+- Typ (interne Darstellung)
+- (Adresse) (wo im Speicher)
+- Wert (variabel)
 
 +++
 
-### Beispiel (Java)
+## Im Speicher
 
-```Java
-nameAnweisung1();
-nameAnweisung2(parameter);
-nameAnweisung3(parameter1, parameter2);
-
-nameAnweisung4(); nameAnweisung5(); 
-```
+![Variable im Speicher](assets/img/Variablen_Speicher.png)
 
 +++
 
-### Beispiel (Java)
+## Konventionen
+
+- sprechende Namen
+- keine Umlaute
+- in der Regel auf Englisch
+- Programmiersprache spezifische Konventionen ([Java](https://www.oracle.com/technetwork/java/codeconventions-135099.html))
+___
+
+# Datentypen
+
++++
+
+- Java ist eine streng typisierte Sprache
+- Jede Variable hat genau einen Datentyp
+- Ein festgelegter Datentyp kann nicht geändert werden
+- Gibt an, wie die Daten gespeichert werden
+- Legt Wertebereich fest
+
++++
 
 ```java
-print("Hallo "); print("Welt!");
+// Datentyp Integer (Ganzzahlen) => int
+int x = 10;
 
+// Datentyp String (Zeichenkette) => String
+String x = "10";
+
+int x = "10"; // ERROR!
+int x = abc;  // ERROR!
+
+int x = 25;   // x hat den Wert 25
+x = 10;       // x hat den neuen Wert 10
+x = "15";     // ERROR!
 ```
-### Beispiel (Python)
++++
 
-```python
-print("Hallo ")
-print("Welt!")
+## Wertebereich
 
+boolean (1b) < byte (1B) < char (1B) < short (2B) < int (4B) < float (4B) long (8B) < double (8B)
+
+```java
+byte x = 127 // x hat den Wert 127
+x = 128      // ERROR! => Overflow
 ```
-+++
-
-Alle Anweisungen findet man [hier](https://processing.org/reference/)
-
----
-
-# Processing
 
 +++
 
-- Basiert auf Java
-- [https://processing.org](https://processing.org/)
-- [Referenz](https://processing.org/reference/)
+## Beispiel mit C
 
-+++
+##### Code
+```c
+#include "stdio.h"
+int main() {
+  char x = 127;
+  printf("x = %d\n", x);
 
-![Processing UI](assets/img/Processing_UI.png)
+  x = x + 1;
+  printf("x = %d\n", x);
 
----
+  return 0;
+}
+```
 
-# Getting Started
-
-+++
-
-## Weihnachtsbaum
-
-Schreibe ein Programm, das das folgende Muster in der Konsole ausgibt:
-
+##### Output
 ```bash
-      *
-     ***
-    *****
-   *******
-  *********
- ***********
-*************
-     ***
+x = 127
+x = -128
 ```
 
 +++
 
-##### Tipp:
-- Es gibt 2 Anweisungen, mit denen Text in der Konsole ausgegeben wird.
-- Sternchen und Leerzeichen helfen weiter ;-)
+## Overflow in Binär
 
-+++
-
-## Perlenkette
-
-Programmiere das angegebene Bild mithilfe der grafischen Grundelemente von Processing:
-
-![Perlenkette](assets/img/Perlenkette.png)
-
-+++
-
-##### Tipp:
-- Lies den Ellipsen Befehl in der Referenz nach
-- Du kannst die Bildschirmgröße mit `size(x,y)` festlegen
-
-+++
-
-## Grafische Elemente
-
-```java
-// Die Größe des grafischen Ausgabefensters wird auf 450 Pixel
-// in der Breite und 320 Pixel in der Höhe festgelegt.
-// Die Hintergrundfarbe ist weiß.
-size(450, 320);
-background(255);
-
-// Die grafischen Grundelemente im angegebenen Bild werden von links
-// nach rechts gezeichnet. Dazu muss für jedes Element zuvor die
-// Füllfarbe und Linienfarbe spezifiziert werden.
-
-// Das rote Rechteck
-stroke(255, 0, 0);         // Linienfarbe ist blau
-fill(255, 0, 0);           // Füllfarbe ist blau
-rect(10, 10, 100, 300);
-
-// Der grüne Kreis
-stroke(0, 255, 0);
-fill(0, 255, 0);
-ellipse(200, 160, 100, 100);
-
-// Die blaue Linie
-strokeWeight(10);          // Strichstärke auf 10 Pixel setzen
-stroke(0, 0, 255);
-line(310, 10, 310, 300);
-
-// Das gelbe Dreieck
-strokeWeight(1);
-stroke(255, 255, 0);
-fill(255, 255, 0);
-triangle(400, 10,          // Punkt oben
-         370, 310,         // Punkt unten links
-         440, 310);        // Punkt unten rechts
-
+##### Zahlen in Binär (byte/char)
 ```
-+++
+-128 = 1000 0000
+-1   = 1000 0001 
+ 0   = 0000 0000
+ 1   = 0000 0001
+ 127 = 0111 1111
+```
+##### Rechnen in Binär
+```
++ = Bitweises OR (|)
 
-## Ghettoblaster
-
-Programmiere in Processing die Zeichnung eines Ghettoblasters. Er soll in dieser Form gestaltet werden:
-
-![Ghettoblaster](assets/img/Ghettoblaster.png)
-
-+++
-
-##### Tipp:
-- Erstelle eine Skizze mit Koordinatensystem (Nullpunkt ist oben links)
+    0111 1111
+  | 0000 0001 
+  -----------
+    1000 0000
+```
