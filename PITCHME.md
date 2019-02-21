@@ -91,7 +91,7 @@ println("Die Zahl " + (float)i); // Die Ganzzahl wird zu erst in eine Kommazahl 
 
 ## Wertebereich
 
-boolean (1b) < byte (1B) < char (1B) < short (2B) < int (4B) < float (4B) long (8B) < double (8B)
+boolean (1b) < byte (1B) < char (1B) < short (2B) < int (4B) < float (4B) < long (8B) < double (8B)
 
 ```java
 byte x = 127 // x hat den Wert 127
