@@ -209,6 +209,8 @@ println(z);  // z hat den Wert 2
 println(a);  // a hat den Wert 4
 ```
 
++++
+
 ## Vergleichsoperatoren
 
 Vergleichsoperatoren liefern als Ergebnis immer Wahrheitswerte (true,false)
