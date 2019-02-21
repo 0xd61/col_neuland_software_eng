@@ -237,19 +237,19 @@ Vergleichsoperatoren liefern als Ergebnis immer Wahrheitswerte (true,false)
 
 +++
 
-##### Operatoren
+### Operatoren
 
 - AND => `&&`
 - OR => `||`
 - XOR => kann mit (`x != y`) nachgebaut werden
 
-##### Negation
+### Negation
 
 `!true == false`
 
 +++
 
-##### Bitweise Manipulierung
+### Bitweise Manipulierung
 
 - AND => &
 - OR => |
