@@ -235,11 +235,13 @@ Vergleichsoperatoren liefern als Ergebnis immer Wahrheitswerte (true,false)
 | false     | true      | false | true  | true  |
 | true      | true      | true  | true  | false |
 
++++
+
 ##### Operatoren
 
-- AND => &&
-- OR => ||
-- XOR => kann mit (x != y) nachgebaut werden
+- AND => `&&`
+- OR => `||`
+- XOR => kann mit (`x != y`) nachgebaut werden
 
 ##### Negation
 
