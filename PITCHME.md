@@ -284,7 +284,7 @@ Was ergibt `!a && b || c`?
 
 +++
 
-# Wandlungsfähigkeit
+## Wandlungsfähigkeit
 
 Anders als in der Mathematik müssen Operatoren auch andere Datentypen als Zahlen bedienen. Daher sind sie Wandlungsfähig in Abhängigkeit vom Datentyp.
 
