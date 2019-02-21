@@ -144,9 +144,12 @@ int y = 2;
 x = y;
 ```
 
+Achtung!!!: `a=b` ist nicht das gleiche wie `a==b`
 +++
 
 ## Arithmetische Operatoren (+,-,*,/, %): 
+
+Punkt-vor-Strich und Klammerregeln, wie in der Mathematik.
 
 ```java
 int x = 3;
@@ -175,6 +178,19 @@ print(z);      // z hat den Wert 1.5;
 
 +++
 
+### Kurzformen
+
+```java
+int x = 1;
+int y = ++x; // x wird erst erhöht und dann in y gespeichert
+int z = y++; // y wird erst in z gespeichert und dann erhöht
+int a = x--; --x; // x wird erst in a gespeichert und dann verringert
+
+println(y);  // y hat den Wert 3
+println(z);  // z hat den Wert 2
+println(a);  // a hat den Wert 2
+```
+
 ## Vergleichsoperatoren
 
 | Vergleich      | Operator |
@@ -197,9 +213,31 @@ print(z);      // z hat den Wert 1.5;
 | false     | true      | false | true  | true  |
 | true      | true      | true  | true  | false |
 
+##### Operatoren
+
+- AND => &&
+- OR => ||
+- XOR => kann mit (x != y) nachgebaut werden
+
 ##### Negation
 
 `!true == false`
+
+##### Bitweise Manipulierung
+
+- AND => &
+- OR => |
+- XOR => ^
+- Bitshift-Left => <<
+- Bitshift-Right => >>
+
+```java
+println(4 & 2);  // 0 => 0100 & 0010 = 0000
+println(4 | 2);  // 6 => 0100 | 0010 = 0110 /* So rechnet eine CPU intern */
+println(4 ^ 2);  // 0 => 0100 ^ 0010 = 0110 
+println(4 << 2); // 16 => 0100 << 2 = 0001 0000
+println(4 >> 2); // 1 => 0100 >> 2 = 0001
+```
 
 +++
 
