@@ -177,6 +177,7 @@ x = x * y;
 // Modulo % --> gibt den ganzzahligen Rest einer Division an
 int z = 30 % 14; // z hat den Wert 2;
 ```
++++
 
 ###  Achtung!!! bei / :
 
