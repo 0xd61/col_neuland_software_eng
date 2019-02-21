@@ -44,10 +44,9 @@ by Daniel Glinka
 | in einem Schritt | int diameter = 90; |
 
 +++
+
 ___
-
 # Datentypen
-
 +++
 
 - Java ist eine streng typisierte Sprache
