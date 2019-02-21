@@ -43,6 +43,7 @@ by Daniel Glinka
 | Zuweisung        | diameter = 90;     |
 | in einem Schritt | int diameter = 90; |
 
++++
 ___
 
 # Datentypen
