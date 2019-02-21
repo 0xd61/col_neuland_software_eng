@@ -251,11 +251,11 @@ Vergleichsoperatoren liefern als Ergebnis immer Wahrheitswerte (true,false)
 
 ### Bitweise Manipulierung
 
-- AND => &
-- OR => |
-- XOR => ^
-- Bitshift-Left => <<
-- Bitshift-Right => >>
+- AND => `&`
+- OR => `|`
+- XOR => `^`
+- Bitshift-Left => `<<`
+- Bitshift-Right => `>>`
 
 ```java
 println(4 & 2);  // 0 => 0100 & 0010 = 0000
@@ -269,9 +269,7 @@ println(4 >> 2); // 1 => 0100 >> 2 = 0001
 
 ### Übung 
 
-Was ergibt !a && b || c
-
-| a | b | c |   |
+| a | b | c | `!a && b || c` |
 | - | - | - | - |
 | 0 | 0 | 0 |   |
 | 0 | 0 | 1 |   |
