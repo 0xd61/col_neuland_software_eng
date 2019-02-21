@@ -43,9 +43,11 @@ by Daniel Glinka
 | Zuweisung        | diameter = 90;     |
 | in einem Schritt | int diameter = 90; |
 
-___
+---
 
 # Datentypen
+
++++
 
 - Java ist eine streng typisierte Sprache
 - Jede Variable hat genau einen Datentyp
