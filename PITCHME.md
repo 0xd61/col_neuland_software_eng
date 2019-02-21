@@ -4,6 +4,8 @@ by Daniel Glinka
 
 # Variablen
 
++++
+
 - Platzhalter
 - Programme dynamisch gestalten
 - Reservierter Speicherbereich
