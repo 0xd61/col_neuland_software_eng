@@ -262,6 +262,23 @@ println(4 >> 2); // 1 => 0100 >> 2 = 0001
 
 +++
 
+### Übung 
+
+Was ergibt !a && b || c
+
+| a | b | c |   |
+| - | - | - | - |
+| 0 | 0 | 0 |   |
+| 0 | 0 | 1 |   |
+| 0 | 1 | 0 |   |
+| 0 | 1 | 1 |   |
+| 1 | 0 | 0 |   |
+| 1 | 0 | 1 |   |
+| 1 | 1 | 0 |   |
+| 1 | 1 | 1 |   |
+
++++
+
 # Wandlungsfähigkeit
 
 Anders als in der Mathematik müssen Operatoren auch andere Datentypen als Zahlen bedienen. Daher sind sie Wandlungsfähig in Abhängigkeit vom Datentyp.
