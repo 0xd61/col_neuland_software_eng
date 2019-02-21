@@ -73,6 +73,22 @@ x = "15";     // ERROR!
 ```
 +++
 
+## Casting
+
+```java
+// Datentyp Float (Kommazahl) => float
+float f = 2.3;
+
+println((int)f);                  // Die Kommazahl wird als Ganzzahl (2) ausgegeben
+
+int i = 10;
+println("Die Zahl " + (float)i); // Die Ganzzahl wird zu erst in eine Kommazahl umgewandelt.
+                                 // Anschließend wird die Kommazahl automatisch in einen String umgewandelt, 
+                                 // damit die Verkettung möglich ist.
+```
+
++++
+
 ## Wertebereich
 
 boolean (1b) < byte (1B) < char (1B) < short (2B) < int (4B) < float (4B) long (8B) < double (8B)
@@ -184,14 +200,17 @@ print(z);      // z hat den Wert 1.5;
 int x = 1;
 int y = ++x; // x wird erst erhöht und dann in y gespeichert
 int z = y++; // y wird erst in z gespeichert und dann erhöht
-int a = x--; --x; // x wird erst in a gespeichert und dann verringert
+int a = x--; // x wird erst in a gespeichert und dann verringert
+a += 2;
 
 println(y);  // y hat den Wert 3
 println(z);  // z hat den Wert 2
-println(a);  // a hat den Wert 2
+println(a);  // a hat den Wert 4
 ```
 
 ## Vergleichsoperatoren
+
+Vergleichsoperatoren liefern als Ergebnis immer Wahrheitswerte (true,false)
 
 | Vergleich      | Operator |
 | -----          | -----    |
@@ -222,6 +241,8 @@ println(a);  // a hat den Wert 2
 ##### Negation
 
 `!true == false`
+
++++
 
 ##### Bitweise Manipulierung
 
