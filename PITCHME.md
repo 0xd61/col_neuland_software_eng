@@ -22,14 +22,6 @@ function setup() {
  - CPU
  - RAM
 
-- Wie rechnet eine CPU
- - Bit/Byte
- - ALU
-
-+++
-
-- Zeichencodierungen
-
 +++
 
 - Programmierung
@@ -132,7 +124,3 @@ function setup() {
 512 GB / 1024 / 1024 / 1024 = 476 GiBytes
 
 ---
-
-## Boolsche Algebra
-
-Wie rechnet eine CPU?
