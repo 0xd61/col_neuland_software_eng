@@ -149,6 +149,8 @@ Programmiere in Processing die Zeichnung eines Ghettoblasters. Er soll in dieser
 ##### Tipp:
 - Erstelle eine Skizze mit Koordinatensystem (Nullpunkt ist oben links)
 
++++
+
 ## Ghettoblaster Lösung
 
 ```java
