@@ -2,7 +2,7 @@
 by Daniel Glinka
 ---
 
-# Kontrollstrukturen
+# Kontroll-strukturen
 
 +++
 
@@ -72,7 +72,7 @@ switch(<Ausdruck>) {
 
 ---
 
-## Wiederhohlungsanweisungen (Schleifen)
+## Wiederholungs-anweisungen (Schleifen)
 
 +++
 
@@ -251,6 +251,8 @@ Erstelle ein Ladevorgang Rädchen wie in folgendem Bild dargestellt:
 
 ![Ladevorgang](assets/img/Ladevorgang.png)
 
++++
+
 Nutze dafür das folgende Template:
 ```java
 size(400, 400);
@@ -283,6 +285,8 @@ strokeCap(ROUND);
 
 Erstelle ein blaues Rechteck, welches sich grün Färbt, wenn sich der Mauszeiger über ihm befindet. Die x- und y-Koordinaten der Mausposition können wir mit den Variablen `mouseX` bzw. `mouseY` herausfinden.
 
++++
+
 Nutze dafür das folgende Template:
 ```java
 public voidsetup() {
@@ -313,10 +317,10 @@ public voiddraw() {
 ##### Tipp:
 
 - Ein Button hat folgende Eigenschaften:
-  - ![Button_Eigenschaften](assets/img/Button_Koordinaten.png)
+  ![Button_Eigenschaften](assets/img/Button_Koordinaten.png)
 
 - Mögliche Mauspositionen für die die angegebene Vergleichsanweisung "wahr" ist
-  - ![Button_Mausposition](assets/img/Button_Mausposition.png)
+  ![Button_Mausposition](assets/img/Button_Mausposition.png)
 
 - Kombination der Vergleichsanweisungen
-  - ![Button_Mausposition_Kombination](assets/img/Button_Mausposition_Kombination.png)
+  ![Button_Mausposition_Kombination](assets/img/Button_Mausposition_Kombination.png)
