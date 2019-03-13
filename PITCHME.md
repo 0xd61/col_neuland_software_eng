@@ -317,10 +317,13 @@ public voiddraw() {
 ##### Tipp:
 
 - Ein Button hat folgende Eigenschaften:
+
 ![Button_Eigenschaften](assets/img/Button_Koordinaten.png)
 
 - Mögliche Mauspositionen für die die angegebene Vergleichsanweisung "wahr" ist
+
 ![Button_Mausposition](assets/img/Button_Mausposition.png)
 
 - Kombination der Vergleichsanweisungen
+
 ![Button_Mausposition_Kombination](assets/img/Button_Mausposition_Kombination.png)
