@@ -29,13 +29,17 @@ by Daniel Glinka
 
 ```java
 // Recap: Boolsche Ausdrücke ergeben immer true oder false (x == y, a <= b, etc.)
-if(<boolescherAusdruck>) {
+if(<boolescher Ausdruck>) {
   // In diesen geklammerten Block kommen alle die Anweisungen hinein,
   // die abgearbeitet werden, wenn die Bedingung wahr ist.
+} 
+else if (<boolscher Ausdruck>) {
+  // in diesem Block kommen alle Anweisungen hinein,
+  // die abgearbeitet werden, wenn die "if" Bedingung falsch ist und die "if else" Bedingung wahr ist.
 }
 else {
   // In diesen geklammerten Block kommen alle Anweisungen hinein,
-  // die abgearbeitet werden, wenn die Bedingung falsch ist.
+  // die abgearbeitet werden, wenn die Bedingungen falsch sind.
 }
 ```
 
@@ -203,3 +207,116 @@ Summe von 1 bis 100 --> 5050
 - Deklariere und initialisiere eine Variable für die Summe
 - Gehe in einer Schleife die Zahlen von 3 bis 27 durch
 - Addiere zur Summenvariable die aktuelle Zählerzahl
+
++++
+
+## Tippspiel
+
+Bei Fußballwettspielen werden die erzielten Wettpunkte nach folgenden Regeln ermittelt:
+- Exakter Tipp (3 Punkte): 
+  - Sieg (z.B. Ergebnis: 3:2, Tipp: 3:2)
+  - Niederlage (z.B. Ergebnis: 0:1, Tipp: 0:1)
+  - Unentschieden (z.B. Ergebnis: 2:2, Tipp: 2:2)
+- Richtige Tendenz (1 Punkt):
+  - Sieg (z.B. Ergebnis: 3:2, Tipp: 2:1)
+  - Niederlage (z.B. Ergebnis: 0:1, Tipp: 1:2)
+  - Unentschieden (z.B. Ergebnis: 2:2, Tipp: 1:1)
+- Sonst 0 Punkte
+
++++
+
+Schreibe ein Programm, das für ein Fußballtippspiel die erzielten Punkte berechnet und das Ergebnis in der Konsole ausgibt. Dazu werden das getippte Ergebnis und das tatsächlich erzielte Ergebnis des Fußballspiels benötigt.
+
+Bei Veränderung der variablen sollen folgende Ergebnisse ausgegeben werden:
+```java
+Ergebnis: 3:2, Tipp: 3:2 → Punkte: 3
+Ergebnis: 0:1, Tipp: 1:2 → Punkte: 1
+Ergebnis: 2:2, Tipp: 1:1 → Punkte: 1
+Ergebnis: 0:1, Tipp: 1:1 → Punkte: 0
+```
+
++++
+
+##### Tipp:
+
+- Deklariere und initialisiere Variablen für den Tipp und das Ergebnis des Fußballspiels.
+- Prüfe anhand der Variablen, welche Punktzahl zutrifft (z.B. mit `if` oder `else if`).
+- Schreibe diese Punktzahl in die Konsole.
+
++++ 
+
+## Ladevorgang
+
+Erstelle ein Ladevorgang Rädchen wie in folgendem Bild dargestellt:
+
+![Ladevorgang](assets/img/Ladevorgang.png)
+
+Nutze dafür das folgende Template:
+```java
+size(400, 400);
+background(255);
+smooth();
+strokeWeight(30);
+strokeCap(ROUND);
+
+// Verschiebe Nullpunkt des Koordinatensystems von der Ecke links oben
+// des grafischen Ausgabefensters ins Zentrum.
+
+// ...
+
+// Zeichne die 8 Linien mit dem line Befehl
+// in einer Schleife
+
+// ... 
+```
+
++++
+
+##### Tipp:
+
+- Nutze lies dir in der Referenz die Funktionen `translate()` und `rotate()` durch.
+- Der Winkel für die Rotation beträgt 45° (= `PI/4.0` in Bogenmaß)
+
++++
+
+## Interaktiver Button
+
+Erstelle ein blaues Rechteck, welches sich grün Färbt, wenn sich der Mauszeiger über ihm befindet. Die x- und y-Koordinaten der Mausposition können wir mit den Variablen `mouseX` bzw. `mouseY` herausfinden.
+
+Nutze dafür das folgende Template:
+```java
+public voidsetup() {
+  size(800, 800);
+}
+
+public voiddraw() {
+  // Hier kommt das geforderte Programm hinein
+  // Dieser Bereich wird durchgehend aufgerufen
+  
+  // Position und Größe des Buttons (Variablen x, y, w, h)
+  // ...
+  
+  // Färbe Rechteck von Mausposition ein
+  // wenn Maus direkt über Rechteck -> Grün
+  // ...
+  
+  // Sonst Blau
+  // ...
+  
+  // Zeichne Rechteck
+  // ...
+}
+```
+
++++
+
+##### Tipp:
+
+- Ein Button hat folgende Eigenschaften:
+  - ![Button_Eigenschaften](assets/img/Button_Koordinaten.png)
+
+- Mögliche Mauspositionen für die die angegebene Vergleichsanweisung "wahr" ist
+  - ![Button_Mausposition](assets/img/Button_Mausposition.png)
+
+- Kombination der Vergleichsanweisungen
+  - ![Button_Mausposition_Kombination](assets/img/Button_Mausposition_Kombination.png)
