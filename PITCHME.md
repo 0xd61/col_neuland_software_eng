@@ -245,6 +245,89 @@ Ergebnis: 0:1, Tipp: 1:1 → Punkte: 0
 
 +++ 
 
+##### Hilfe:
+
+```java
+// Ergebnis des Spiels
+int home = 3;
+int guest = 2;
+
+// Getipptes Ergebnis
+int betHome = 3;
+int betGuest =2;
+
+// Berechnete Punkte
+int point = 0;
+
+if (/* exakter Tipp */) {
+  points = 3;
+}
+// Tipp: Tendenz durch Subtraktion berechnen (home - guest) > 0 && (betHome - betGuest) > 0
+else if (/* richtige Tendenz (Sieg Home) */) {
+  points = 1;
+}
+else if (/* richtige Tendenz (Sieg Guest) */) {
+  points = 1;
+}
+else if (/* richtige Tendenz (Unentschieden) */) {
+  points = 1;
+}
+else {
+  points = 0;
+}
+
+```
+
++++
+
+## PIN-Code-Generator
+
+Schreibe ein Programm, das alle viestellingen PINs einer Bankkarte oder Passcodes erzeugt und in der Konsole ausgibt. Alle PINs sind vierstellig!
+
+##### Ausgabe:
+
+```
+0000
+0001
+0002
+...
+9998
+9999
+```
+
++++
+
+##### Tipp:
+
+- Mit Schleifen Alle PINs durchgehen.
+- Prüfen, ob die Zahl ein-, zwei-, oder dreistellung ist. Gegebenenfalls Nullen hinzu fügen.
+- Wenn nicht alle Einträge sichtbar sind, kannst du die Schleife mit dem befehlt delay(1) verlangsamen. Delay fügt eine Pause von einer Millisekunde in das Programm ein.
+
++++
+
+##### Hilfe:
+
+```java
+// Gehe alle PIN-Zahlen durch
+for (/* ... */) {
+
+  // Füge bei einstelligen Zahlen drei Nullen hinzu
+  if (/* ... */){
+    print("000");
+  }
+  // Füge bei einstelligen Zahlen drei Nullen hinzu, etc.
+  // ...
+  
+  // Gebe PIN-Zahl mit Zeilenumbruch aus
+  
+  // Verlangsamung der Ausgabe
+  delay(1);
+
+}
+```
+
++++
+
 ## Ladevorgang
 
 Erstelle ein Ladevorgang Rädchen wie in folgendem Bild dargestellt:
@@ -253,7 +336,15 @@ Erstelle ein Ladevorgang Rädchen wie in folgendem Bild dargestellt:
 
 +++
 
-Nutze dafür das folgende Template:
+##### Tipp:
+
+- Nutze lies dir in der Referenz die Funktionen `translate()` und `rotate()` durch.
+- Der Winkel für die Rotation beträgt 45° (= `PI/4.0` in Bogenmaß)
+
++++
+
+##### Hilfe:
+
 ```java
 size(400, 400);
 background(255);
@@ -267,19 +358,158 @@ strokeCap(ROUND);
 // ...
 
 // Zeichne die 8 Linien mit dem line Befehl
+// und rotiere das Koordinatensystem mit dem rotate Befehl
 // in einer Schleife
+for (/* ... */) {
+   
+}
+```
 
-// ... 
++++
+
+## Dominosteine
+
+#### Vorübung
+
+Erzeuge diese Pattern mithilfe von `for`-Schleifen
+
+```
+#                     1
+##                    1 2
+###                   1 2 3
+####                  1 2 3 4
+#####                 1 2 3 4 5
+######                1 2 3 4 5 6
+#######               1 2 3 4 5 6 7
+```
+
++++
+
+##### Hilfe:
+
+```java
+// Forschleife für die Zeilen
+for (/* ... */) {
+
+  // Forschleife für die Zahlen (Abhängig von "Zähl"-Variable in äußerer Schleife)
+  for (/* ... */) {
+    // Anzeigen des Zeichens/Zahl in Konole
+  }
+
+  // Zeilenumbruch
+  println();
+}
+```
+
++++
+
+#### Aufgabe:
+
+Erstelle ein Programm, welches mithilfe von `for`-Schleifen alle Spielsteine (ohne Dopplungen) des Legespiels Domino ausgibt.
+
+```
+(0|0)(0|1)(0|2)(0|3)(0|4)(0|5)(0|6)
+     (1|1)(1|2)(1|3)(1|4)(1|5)(1|6)
+          (2|2)(2|3)(2|4)(2|5)(2|6)
+               (3|3)(3|4)(3|5)(3|6)
+                    (4|4)(4|5)(4|6)
+                         (5|5)(5|6)
+                              (6|6)
 ```
 
 +++
 
 ##### Tipp:
 
-- Nutze lies dir in der Referenz die Funktionen `translate()` und `rotate()` durch.
-- Der Winkel für die Rotation beträgt 45° (= `PI/4.0` in Bogenmaß)
+- Mit jeder Zeile verringert siche die Anzahl der ausgegeben Steine und die Startzahl wird um 1 erhöht
+- Wie in der Vorübung kannst du zwei Schleifen ineinander verschachteln
+- Erzeuge zunächst die Leerzeichen und gebe dann die Dominosteine in der Zeile aus. Ist die Zeile fertig, kannst du einen Zeilenumbruch erzeugen.
 
 +++
+
+##### Hilfe:
+
+```java
+// For-Loop für Zeilen (0 -> 6)
+for (/* ... */) {
+  // Erzeuge Leerzeichen (Abhängig von Zeile)
+  // ...
+  
+  // Gebe Dominosteine aus (Abhängig von Zeile)
+  // ...
+  
+  // Zeilenumbruch
+  println();
+}
+```
+
++++
+
+## Schachbrett
+
+Programmiere ein Schachbrett. Nutze dafür drei If-Anweisungen und Wiederholungsanweisungen.
+
+
+![Schachbrett](assets/img/Schachbrett.png)
+
++++
+
+##### Tipp: 
+
+- Gehe jede Zeile und Spalte durch und male dabei jeweils erst ein weißes und dann ein schwarzes Viereck. Speichere die Farbe als `boolean`-Variable, die mit jedem Schritt zwischen `true` und `false` wechselt.
+- Verschiebe den Koordinatenursprung zum Zeichnen der Vierecke (erleichtert die Rechnungen**
+- Achte darauf, dass jede Zeile nicht mit der gleichen Farbe der vorherigen Zeile beginnt.
+
++++
+
+##### Hilfe:
+
+```java
+size(800, 800);
+noStroke();
+
+// Soll aktueller Kasten schwarz sein?
+boolean black = true;
+
+// Größe pro Feldelement
+int size = 100;
+
+// Gehe jede Spalte durch 
+// (max Anzahl der Spalten: height / size)
+for(/* ... */) {
+
+  // Gehe jede Zeile durch
+  // (max Anzahl der Zeilen: width / size)
+  for(/* ... */) {
+
+    // Male Farbe abhängig von black Variable
+    // ...
+
+    // Kehre black Variable um
+    // ...
+
+    // Male Element
+    // ...
+
+    // "Wandere" ein Feld nach rechts
+    translate(size, 0);
+  }
+
+  // Ende der Zeile erreicht
+
+  // "Wandere" in nächste Zeile 
+  // (um die Spielfeldbreite nach links 
+  // und um die Höhe eines Feldes nach unten)
+  // ...
+
+  // Kehre Variable nochmals um, da Muster
+  // immer mit letzter Farbe anfängt
+  // ...
+}
+```
+
++++
+
 
 ## Interaktiver Button
 
