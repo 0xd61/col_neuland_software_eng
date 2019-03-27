@@ -315,7 +315,7 @@ for (/* ... */) {
   if (/* ... */){
     print("000");
   }
-  // Füge bei einstelligen Zahlen drei Nullen hinzu, etc.
+  // Füge bei zweistelligen Zahlen zwei Nullen hinzu, etc.
   // ...
   
   // Gebe PIN-Zahl mit Zeilenumbruch aus
@@ -391,9 +391,9 @@ Erzeuge diese Pattern mithilfe von `for`-Schleifen
 // Forschleife für die Zeilen
 for (/* ... */) {
 
-  // Forschleife für die Zahlen (Abhängig von "Zähl"-Variable in äußerer Schleife)
+  // Forschleife für die "Spalten" (Abhängig von "Zähl"-Variable in äußerer Schleife)
   for (/* ... */) {
-    // Anzeigen des Zeichens/Zahl in Konole
+    // Anzeigen des Zeichens/Zahl in Konsole
   }
 
   // Zeilenumbruch
@@ -447,7 +447,7 @@ for (/* ... */) {
 
 ## Schachbrett
 
-Programmiere ein Schachbrett. Nutze dafür drei If-Anweisungen und Wiederholungsanweisungen.
+Programmiere ein Schachbrett.
 
 
 ![Schachbrett](assets/img/Schachbrett.png)
@@ -457,7 +457,7 @@ Programmiere ein Schachbrett. Nutze dafür drei If-Anweisungen und Wiederholungs
 ##### Tipp: 
 
 - Gehe jede Zeile und Spalte durch und male dabei jeweils erst ein weißes und dann ein schwarzes Viereck. Speichere die Farbe als `boolean`-Variable, die mit jedem Schritt zwischen `true` und `false` wechselt.
-- Verschiebe den Koordinatenursprung zum Zeichnen der Vierecke (erleichtert die Rechnungen**
+- Verschiebe den Koordinatenursprung zum Zeichnen der Vierecke (erleichtert die Rechnungen).
 - Achte darauf, dass jede Zeile nicht mit der gleichen Farbe der vorherigen Zeile beginnt.
 
 +++
