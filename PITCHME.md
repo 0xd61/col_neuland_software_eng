@@ -312,7 +312,7 @@ else if ((home - guest) == 0 && (betHome - betGuest) == 0) {
   points = 1;
 }
 else {
-  // falscher
+  // falscher Tipp
   points = 0;
 }
 
