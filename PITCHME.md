@@ -562,11 +562,11 @@ Erstelle ein blaues Rechteck, welches sich grün Färbt, wenn sich der Mauszeige
 
 Nutze dafür das folgende Template:
 ```java
-public voidsetup() {
+public void setup() {
   size(800, 800);
 }
 
-public voiddraw() {
+public void draw() {
   // Hier kommt das geforderte Programm hinein
   // Dieser Bereich wird durchgehend aufgerufen
   
