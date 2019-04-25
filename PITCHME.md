@@ -269,6 +269,42 @@ Programmiere das Spiel Pong.
 
 ![Pong](./assets/img/pong.png)
 
++++
+
+```java
+float x;
+float y;
+float speedX;
+float speedY;
+int rectSize = 100;
+int diameter = 10;
+
+void setup() {
+  size(500, 500);
+  reset();
+}
+
+void reset() {
+ x = width/2;
+ y = height/2;
+ speedX = 1;
+ speedY = 5;
+}
+
+void draw() {
+  background(120,120,120);
+  rect(mouseX-rectSize/2, height-30, rectSize, 10);
+  
+  circle(x,y, diameter);
+  
+  x += speedX;
+  y += speedY;
+  
+  if(y > height - 30 && y < height - 20 && x < mouseX + rectSize/2 && x > mouseX - rectSize/2) {
+    speedY = speedY*-1;
+  }
+}
+```
 ---
 
 # Weitere Beispiele
