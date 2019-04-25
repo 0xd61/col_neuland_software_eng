@@ -261,6 +261,7 @@ void setup() {
   println("product(8, 15): " + result);
 }
 ```
++++
 
 ## Pong
 
