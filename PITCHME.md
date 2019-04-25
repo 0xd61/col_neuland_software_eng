@@ -204,6 +204,64 @@ void setup() {
 
 +++
 
+##### Lösung
+
+```java
+// Erstelle eine Funktion mit dem Namen product, welche den Startwert s und
+// Endwert e als Parameter erhält. Die Funktion soll das Ergebnis der Berechnung
+// zurückliefern.
+int product(int e, int s) {
+ 
+  // Ist einer der beiden Werte kleiner 0?
+  // Wenn das zutrifft, soll 0 zurückgegeben werden
+  if(s < 0 || e < 0) {
+    return 0; 
+  }
+  
+  // Ist einer der beiden Werte gleich 0?
+  // Wenn das zutrifft, soll 0 zurückgegeben werden
+  if(s == 0 || e == 0) {
+    return 0; 
+  }
+  
+  // Ist e kleiner s?
+  // Vertausche die Werte
+  if (e < s) {
+    int tmp = e;
+    e = s;
+    s = tmp;
+  }
+ 
+ 
+  // Deklaration und Initialisierung der Variablen für das Ergebnis
+  // Der Startwert muss 1 sein (wegen Multiplikation)
+  int result = 1;
+ 
+  // Zähle vom Start- bis Endwert
+  // und multipliziere die Zahl mit dem Ergebnis
+  for(int i = s; i <= e; i++) {
+    result = result * i;
+  }
+ 
+  // Das Ergebnis zurückliefern
+  return result;
+}
+
+// Erstelle eine Funktion factorial, welche den Endwert n
+// als Parameter erhält und die Fakultät des Wertes berechnet.
+int factorial(int n) {
+ return product(1,n); 
+}
+ 
+// Startpunkt des Hauptprogramms
+// Hier wird die implementierte Funktion zu Demonstrations- und
+// Testzwecken aufgerufen.
+void setup() {
+  int result = factorial(6);
+  println("product(8, 15): " + result);
+}
+```
+
 ## Pong
 
 Programmiere das Spiel Pong.
