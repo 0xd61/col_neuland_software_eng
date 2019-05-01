@@ -1,6 +1,6 @@
 # Software Engineering
-by Daniel Glinka
----
+
+## by Daniel Glinka
 
 # Funktionen
 
@@ -83,7 +83,7 @@ Funktion `BerechneGehalt` sollte nur das Gehalt berechnen und zurückgeben. NICH
 
 ##### Gültigkeit
 
-Wie bei Blöcken sind Variablen/Parameter nur innerhalb des Funktionsblock gültig. Wenn Variable benötigt wird, sollte diese als Parameter übergeben werden. 
+Wie bei Blöcken sind Variablen/Parameter nur innerhalb des Funktionsblock gültig. Wenn Variable benötigt wird, sollte diese als Parameter übergeben werden.
 
 ---
 
@@ -140,12 +140,12 @@ s = 0, e = 33 --> 0
   // Ist e kleiner s?
   // Vertausche die Werte
   /*...*/
-  
-  
+
+
   // Deklaration und Initialisierung der Variablen für das Ergebnis
   // Der Startwert muss 1 sein (wegen Multiplikation)
   int result = 1;
-  
+
   // Zähle vom Start- bis Endwert
   // und multipliziere die Zahl mit dem Ergebnis
   /*...*/
@@ -211,19 +211,19 @@ void setup() {
 // Endwert e als Parameter erhält. Die Funktion soll das Ergebnis der Berechnung
 // zurückliefern.
 int product(int e, int s) {
- 
+
   // Ist einer der beiden Werte kleiner 0?
   // Wenn das zutrifft, soll 0 zurückgegeben werden
   if(s < 0 || e < 0) {
-    return 0; 
+    return 0;
   }
-  
+
   // Ist einer der beiden Werte gleich 0?
   // Wenn das zutrifft, soll 0 zurückgegeben werden
   if(s == 0 || e == 0) {
-    return 0; 
+    return 0;
   }
-  
+
   // Ist e kleiner s?
   // Vertausche die Werte
   if (e < s) {
@@ -231,18 +231,18 @@ int product(int e, int s) {
     e = s;
     s = tmp;
   }
- 
- 
+
+
   // Deklaration und Initialisierung der Variablen für das Ergebnis
   // Der Startwert muss 1 sein (wegen Multiplikation)
   int result = 1;
- 
+
   // Zähle vom Start- bis Endwert
   // und multipliziere die Zahl mit dem Ergebnis
   for(int i = s; i <= e; i++) {
     result = result * i;
   }
- 
+
   // Das Ergebnis zurückliefern
   return result;
 }
@@ -250,9 +250,9 @@ int product(int e, int s) {
 // Erstelle eine Funktion factorial, welche den Endwert n
 // als Parameter erhält und die Fakultät des Wertes berechnet.
 int factorial(int n) {
- return product(1,n); 
+ return product(1,n);
 }
- 
+
 // Startpunkt des Hauptprogramms
 // Hier wird die implementierte Funktion zu Demonstrations- und
 // Testzwecken aufgerufen.
@@ -261,6 +261,7 @@ void setup() {
   println("product(8, 15): " + result);
 }
 ```
+
 +++
 
 ## Pong
@@ -294,17 +295,138 @@ void reset() {
 void draw() {
   background(120,120,120);
   rect(mouseX-rectSize/2, height-30, rectSize, 10);
-  
+
   circle(x,y, diameter);
-  
+
   x += speedX;
   y += speedY;
-  
+
   if(y > height - 30 && y < height - 20 && x < mouseX + rectSize/2 && x > mouseX - rectSize/2) {
     speedY = speedY*-1;
   }
 }
 ```
+
++++
+
+## Literzahlen umwandeln
+
+Scheibe eine Funktion , welche als `float`-Werte übergebebe Literzahl wie unten
+beschrieben umwandelt und als String zurückgibt.
+
+```
+Wert              -> String
+1.0 und größer    -> <vol> l
+0.1 und größer    -> <vol> cl
+0.001 und größer  -> <vol> ml
+kleiner als 0.001 -> Number too small!
+```
+
++++
+
+##### Tipp
+
+- wenn du keine Kommazahlen möchtest, versuche eine Umwandlung zu Integer-Werten
+- Achtung bei Division
+- `float`-Werte müssen in Java immer mit einem nachstehenden _f_ definiert werden (z.B. 0.01f)
+
++++
+
+##### Hilfe
+
+```java
+// Funktion zur Umrechnung von Volumenangaben
+// Erhält das Volumen als Fließkommazahl und gibt den berechneten
+// Wert mit der Einheit als String zurück
+String volumeConverter(float volume) {
+  // ist das Volumen größer oder gleich 1.0
+  // dann Rückgabe Wert mit Einheit "l"
+  /*...*/
+
+  // sonst prüfe,
+  // ob Volumen größer oder gleich 0.1
+  // dann Rückgabe Wert mit Einheit "cl"
+  /*...*/
+
+  // ansonsten prüfe, ob Volumen größer
+  // oder gleich 0.001f
+  // dann Rückgabe Wert mit Einheit "ml"
+  /*...*/
+
+  // ansonsten gib Fehlermeldung als Wert
+  return "Number too small!"; // der Umwandlung zurück
+}
+
+// Startpunkt des Hauptprogramms
+// Hier wird die implementierte Funktion zu Demonstrations- und
+// Testzwecken aufgerufen.
+void setup() {
+  println(volumeConverter(1.0));
+  println(volumeConverter(0.42));
+  println(volumeConverter(0.023));
+  println(volumeConverter(0.00023));
+}
+```
+
++++
+
+## Würfel
+
+Programmiere ein digitales Würfelprogramm, welches bei einem beliebigen
+Tastendruck eine Zufallszahl zwischen 1 und 6 ausgibt und dann die Form eines
+Würfels visualisiert. Die Programmteile sollen als einzelne Funktionen
+implementiert werden.
+
++++
+
+###### Tipp
+
+- Teste zunächst alle Funktionen mit festen Werten
+- Gib zur Kontrolle die Zufallszahlen in der Konsole aus
+
++++
+
+##### Hilfe
+
+```java
+// Wurf und Visualisierung eines 6-seitigen Würfels
+int diceNumber = 1; // Würfelzahl, wird hier einmalig initialisiert
+
+// Funktion drawDice zum Zeichnen einer gewürfelten Zahl, die als Integer-Wert
+// übergeben wird.
+/*...*/
+
+// Funktion throwDice zum Generieren einer Zufallszahl,
+// die dann als Integer-Wert zurückgeliefert wird
+// Schau dir dazu die Funktion random in der Referenz an
+/*...*/
+
+// Diese Funktion wird ausgeführt, wenn eine Taste
+// gedrückt wurde.
+void keyPressed() {
+  diceNumber = throwDice();
+}
+
+// Startpunkt des Hauptprogramms
+// Hier wird die implementierte Funktion zu Demonstrations- und
+// Testzwecken aufgerufen.
+void setup() {
+  size(400, 400);
+  diceNumber = throwDice(); // Zur Initialisierung einmal werfen
+}
+
+// Funktion zum Zeichnen
+void draw() {
+  clear();
+  stroke(0);
+  fill(0);
+  background(255, 255, 255);
+  drawDice(diceNumber);
+}
+```
+
++++
+
 ---
 
 # Weitere Beispiele
