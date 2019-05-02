@@ -295,15 +295,28 @@ void reset() {
 void draw() {
   background(120,120,120);
   rect(mouseX-rectSize/2, height-30, rectSize, 10);
-
+  
   circle(x,y, diameter);
-
+  
   x += speedX;
   y += speedY;
-
+  
   if(y > height - 30 && y < height - 20 && x < mouseX + rectSize/2 && x > mouseX - rectSize/2) {
     speedY = speedY*-1;
+    rectSize = rectSize - 10;
   }
+  
+  if(y < 0){
+    speedY = speedY*-1;
+  }
+  
+  if(x < 0 || x > width){
+    speedX = speedX*-1; 
+  }
+}
+
+void mousePressed() {
+   reset(); 
 }
 ```
 
@@ -311,8 +324,8 @@ void draw() {
 
 ## Literzahlen umwandeln
 
-Scheibe eine Funktion , welche als `float`-Werte übergebebe Literzahl wie unten
-beschrieben umwandelt und als String zurückgibt.
+Scheibe eine Funktion , welche als `float`-Werte übergebebe Literzahlen, wie unten
+beschrieben, umwandelt und als String zurückgibt.
 
 ```
 Wert              -> String
