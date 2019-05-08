@@ -295,28 +295,28 @@ void reset() {
 void draw() {
   background(120,120,120);
   rect(mouseX-rectSize/2, height-30, rectSize, 10);
-  
+
   circle(x,y, diameter);
-  
+
   x += speedX;
   y += speedY;
-  
+
   if(y > height - 30 && y < height - 20 && x < mouseX + rectSize/2 && x > mouseX - rectSize/2) {
     speedY = speedY*-1;
     rectSize = rectSize - 10;
   }
-  
+
   if(y < 0){
     speedY = speedY*-1;
   }
-  
+
   if(x < 0 || x > width){
-    speedX = speedX*-1; 
+    speedX = speedX*-1;
   }
 }
 
 void mousePressed() {
-   reset(); 
+   reset();
 }
 ```
 
@@ -392,7 +392,7 @@ implementiert werden.
 
 +++
 
-###### Tipp
+##### Tipp
 
 - Teste zunächst alle Funktionen mit festen Werten
 - Gib zur Kontrolle die Zufallszahlen in der Konsole aus
@@ -439,6 +439,80 @@ void draw() {
 ```
 
 +++
+
+## Sanduhr
+
+Erstelle ein Programm, welches eine Sanduhr in der Console generiert. Die Größe
+soll über den Parameter `width` festgelegt werden können.
+
++++
+
+```
+width: 3
+###
+ #
+###
+
+width: 6
+######
+ ####
+  ##
+ ####
+######
+
+width: 9
+#########
+ #######
+  #####
+   ###
+    #
+   ###
+  #####
+ #######
+#########
+```
+
++++
+
+##### Tipp
+
+- Der Mittelteil wechselt zwischen eine und zwei Rauten (gerade/ungerade)
+- Überlege dir vorher, wie die verschachtelten `for`-Schleifen zählen müssen
+- Auch Leerzeichen müssen gezeichnet werden
+
++++
+
+##### Hilfe
+
+```java
+// Erstelle eine Funktion printSandglass, welche keinen Wert zurückgibt
+// und den Parameter width als Ganzzahl erhält
+/*...*/
+
+  if(width > 2) { // nur wenn die Breite > 2 ist
+    int height = width; // Höhe wird mit Breite initialisiert
+    if(width % 2 == 0) // ist die Breite eine gerade Zahl
+      height--; // muss die Höhe um eins verringert werden
+
+
+    // Zeichne das obere Dreieck. Nutze dafür die halbe Höhe.
+    // Nutze verschachtelte For-Schleifen, um leerzeichen und # zu zeichen
+    /*...*/
+
+    // Zeichne das untere Dreieck.
+    /*...*/
+  }
+}
+
+// Startpunkt des Hauptprogramms
+// Hier wird die implementierte Funktion zu Demonstrations- und
+// Testzwecken aufgerufen.
+void setup() {
+  // Rufe die erstellte Funktion mit einem beliebigen
+  // width Parameter auf.
+  /*...*/
+}
+```
 
 ---
 
