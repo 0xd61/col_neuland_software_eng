@@ -303,7 +303,20 @@ void draw() {
 
   if(y > height - 30 && y < height - 20 && x < mouseX + rectSize/2 && x > mouseX - rectSize/2) {
     speedY = speedY*-1;
+    rectSize = rectSize - 10;
   }
+
+  if(y < 0){
+    speedY = speedY*-1;
+  }
+
+  if(x < 0 || x > width){
+    speedX = speedX*-1;
+  }
+}
+
+void mousePressed() {
+   reset();
 }
 ```
 
@@ -311,8 +324,8 @@ void draw() {
 
 ## Literzahlen umwandeln
 
-Scheibe eine Funktion , welche als `float`-Werte übergebebe Literzahl wie unten
-beschrieben umwandelt und als String zurückgibt.
+Scheibe eine Funktion , welche als `float`-Werte übergebebe Literzahlen, wie unten
+beschrieben, umwandelt und als String zurückgibt.
 
 ```
 Wert              -> String
@@ -379,7 +392,7 @@ implementiert werden.
 
 +++
 
-###### Tipp
+##### Tipp
 
 - Teste zunächst alle Funktionen mit festen Werten
 - Gib zur Kontrolle die Zufallszahlen in der Konsole aus
@@ -427,6 +440,81 @@ void draw() {
 
 +++
 
+## Sanduhr
+
+Erstelle ein Programm, welches eine Sanduhr in der Console generiert. Die Größe
+soll über den Parameter `width` festgelegt werden können.
+
++++
+
+```
+width: 3
+###
+ #
+###
+
+width: 6
+######
+ ####
+  ##
+ ####
+######
+
+width: 9
+#########
+ #######
+  #####
+   ###
+    #
+   ###
+  #####
+ #######
+#########
+```
+
++++
+
+##### Tipp
+
+- Der Mittelteil wechselt zwischen eine und zwei Rauten (gerade/ungerade)
+- Überlege dir vorher, wie die verschachtelten `for`-Schleifen zählen müssen
+- Auch Leerzeichen müssen gezeichnet werden
+
++++
+
+##### Hilfe
+
+```java
+// Erstelle eine Funktion printSandglass, welche keinen Wert zurückgibt
+// und den Parameter width als Ganzzahl erhält
+/*...*/
+
+  if(width > 2) { // nur wenn die Breite > 2 ist
+    int height = width; // Höhe wird mit Breite initialisiert
+    if(width % 2 == 0) // ist die Breite eine gerade Zahl
+      height--; // muss die Höhe um eins verringert werden
+
+
+    // Zeichne das obere Dreieck. Nutze dafür die halbe Höhe.
+    // Nutze verschachtelte For-Schleifen, um leerzeichen und # zu zeichen
+    /*...*/
+
+    // Zeichne das untere Dreieck.
+    /*...*/
+  }
+}
+
+// Rufe die erstellte Funktion mit einem beliebigen
+// width Parameter auf.
+/*...*/
+}
+
+```
+
+---
+
++++
+
 ## Bogeschießen Spiel
 
 ### Wurfparabel
@@ -458,6 +546,7 @@ Anfangsgeschwindigkeit v0 und einen bestimmten Anfangswinkel β im Ausgabefenste
 darstellt.
 
 ![Wurfparabel](assets/img/Wurfparabel.png)
+
 +++
 
 ##### Tipp
@@ -466,6 +555,8 @@ darstellt.
   berechnet?)
 - Erst einmal mit festen Werten t testen. Wann bleibt y größer 0?
 - ACHTUNG: y=0 ist im Zeichenbereich oben links.
+
++++
 
 ##### Hilfe
 
@@ -486,20 +577,23 @@ darstellt.
   // Achtung: y muss an den unteren Fensterrand verschoben werden.
   /*...*/
 
-
 // Startpunkt des Hauptprogramms
 // Hier wird die implementierte Funktion zu Demonstrations- und
 // Testzwecken aufgerufen.
 void setup() {
-size(400, 400);
-stroke(255, 0, 0);
-fill(255, 0, 0);
-background(0, 0, 0);
-// Rufe die erstellte Funktion mit den Werten v0=60, beta=45
-/*...*/
+  size(400, 400);
+  stroke(255, 0, 0);
+  fill(255, 0, 0);
+  background(0, 0, 0);
+  // Rufe die erstellte Funktion mit den Werten v0=60, beta=45
+  /*...*/
 }
 ```
 
 # weitere Beispiele
 
 - [Processing Examples](https://processing.org/examples/)
+
+```
+
+```
