@@ -476,7 +476,7 @@ width: 9
 
 ##### Tipp
 
-- Der Mittelteil wechselt zwischen eine und zwei Rauten (gerade/ungerade)
+- Der Mittelteil wechselt zwischen einer und zwei Rauten (gerade/ungerade)
 - Überlege dir vorher, wie die verschachtelten `for`-Schleifen zählen müssen
 - Auch Leerzeichen müssen gezeichnet werden
 
