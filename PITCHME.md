@@ -427,8 +427,79 @@ void draw() {
 
 +++
 
----
+## Bogeschießen Spiel
 
-# Weitere Beispiele
+### Wurfparabel
+
++++
+
+Viele Computerspiele basieren auf physikalischen Gesetzmäßigkeiten. Für dieses
+Spiel benötigen wir das physikalische Gesetz der Wurfparabel. Dieses beschreibt
+die Flugkoordinaten eines geworfenen/geschossenen Gegenstandes zu einem
+bestimmten Zeitpunkt.
+
++++
+
+#### Formeln
+
+- Konstanten:
+  - Fallbeschleunigung: g=9,81
+- Startwerte:
+  - Geschwindigkeit: v0
+  - Winkel: β
+- Berechnung:
+  - x(t) = v0 \* t \* cos(β)
+  - y(t ) = v0 \* t \* sin(β) − g/2 \* t^2
+
++++
+
+Schreibe eine Funktion, die die Wurfparabel für eine bestimmte
+Anfangsgeschwindigkeit v0 und einen bestimmten Anfangswinkel β im Ausgabefenster
+darstellt.
+
+![Wurfparabel](assets/img/Wurfparabel.png)
++++
+
+##### Tipp
+
+- Gib den Winkel in der Konsole aus (wird Cosinus/Sinus in Radians oder Grad
+  berechnet?)
+- Erst einmal mit festen Werten t testen. Wann bleibt y größer 0?
+- ACHTUNG: y=0 ist im Zeichenbereich oben links.
+
+##### Hilfe
+
+```java
+// Deklaration der Konstanten g für die Fallbeschleunigung
+/*...*/
+
+// Funktion drawTrajectory zum Zeichnen der Koordinaten der Wurfparabel für
+// Anfangsgeschwindigkeit v0 und -winkel beta, die als
+// Fließkommazahl an die Funktion übergeben werden. Da die
+// Funktion das Berechnen und Zeichnen übernimmt, hat sie
+// keinen Rückgabewert.
+/*...*/
+  // Umwandlung des Winkels von Grad in Radians
+  /*...*/
+
+  // Berechne und zeichne die Parabel in einer Skalierung von 0.25 von t=0 bis t=20
+  // Achtung: y muss an den unteren Fensterrand verschoben werden.
+  /*...*/
+
+
+// Startpunkt des Hauptprogramms
+// Hier wird die implementierte Funktion zu Demonstrations- und
+// Testzwecken aufgerufen.
+void setup() {
+size(400, 400);
+stroke(255, 0, 0);
+fill(255, 0, 0);
+background(0, 0, 0);
+// Rufe die erstellte Funktion mit den Werten v0=60, beta=45
+/*...*/
+}
+```
+
+# weitere Beispiele
 
 - [Processing Examples](https://processing.org/examples/)
