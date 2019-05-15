@@ -588,10 +588,8 @@ void setup() {
 }
 ```
 
+---
+
 # weitere Beispiele
 
 - [Processing Examples](https://processing.org/examples/)
-
-```
-
-```
