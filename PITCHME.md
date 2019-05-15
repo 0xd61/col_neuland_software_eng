@@ -511,8 +511,6 @@ width: 9
 
 ```
 
----
-
 +++
 
 ## Bogeschießen Spiel
