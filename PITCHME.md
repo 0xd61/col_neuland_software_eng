@@ -535,7 +535,7 @@ bestimmten Zeitpunkt.
   - Winkel: β
 - Berechnung:
   - x(t) = v0 \* t \* cos(β)
-  - y(t ) = v0 \* t \* sin(β) − g/2 \* t^2
+  - y(t) = v0 \* t \* sin(β) − g/2 \* t^2
 
 +++
 
@@ -584,6 +584,59 @@ void setup() {
   fill(255, 0, 0);
   background(0, 0, 0);
   // Rufe die erstellte Funktion mit den Werten v0=60, beta=45
+  /*...*/
+}
+```
+
++++
+
+### Steigungswinkel
+
+Schreibe eine Funktion, welche den Steigungswinkel (des Pfeils) berechnet.
+Dafür wird die 1 Ableitung der formeln für die Wurfparabel benötigt
+
++++
+
+##### Formeln
+
+- Berechnung
+  - 1. Ableitung nach t von:
+    - x(t) = v0 \* t \* cos(β)
+    - y(t) = v0 \* t \* sin(β) − g/2 \* t^2
+  - Steigung:
+    - y1(t)/x1(t) = tan(β)
+
++++
+
+##### Hilfe
+
+```java
+// Deklaration der Konstanten g für die Fallbeschleunigung
+/*...*/
+
+// Erstelle die Funktion getDegrees zur Berechnung des
+// Steigungswinkels des Pfeils, mit den Parametern
+// Anfangsgeschwindigkeit v0, -winkel beta und die Zeit t, die als
+// Fließkommazahl an die Funktion übergeben werden.
+// Es soll eine Fließkommazahl zurückgegeben werden
+/*...*/
+  // Umwandlung des Winkels von Grad in Radians
+  /*...*/
+
+  // Berechne
+  // x1, y1 und damit den Steigungswinkel
+  /*...*/
+
+  // Gebe den Steigungswinkel in Grad zurück
+  /*...*/
+
+
+// Startpunkt des Hauptprogramms
+// Hier wird die implementierte Funktion zu Demonstrations- und
+// Testzwecken aufgerufen.
+void setup() {
+  // Rufe die erstellte Funktion mit den Werten v0=60, beta=45.0, t=5.0 auf
+  // und schreibe den zurückgegeben Winkel in die Console
   /*...*/
 }
 ```
