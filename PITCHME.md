@@ -595,6 +595,12 @@ void setup() {
 Schreibe eine Funktion, welche den Steigungswinkel (des Pfeils) berechnet.
 Dafür wird die 1 Ableitung der formeln für die Wurfparabel benötigt
 
+```
+getDegrees(60, 45.0, 0.0) --> 45.0
+getDegrees(60, 45.0, 2.0) --> 28.260345
+getDegrees(60, 45.0, 5.0) --> 8.873369
+```
+
 +++
 
 ##### Formeln
