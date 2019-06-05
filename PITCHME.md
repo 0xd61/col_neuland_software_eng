@@ -573,6 +573,7 @@ darstellt.
 
   // Berechne und zeichne die Parabel in einer Skalierung von 0.25 von t=0 bis t=20
   // Achtung: y muss an den unteren Fensterrand verschoben werden.
+  // Tipp: speichere dir den Startpunk in einer Variablen yStart
   /*...*/
 
 // Startpunkt des Hauptprogramms
@@ -645,6 +646,260 @@ void setup() {
   // und schreibe den zurückgegeben Winkel in die Console
   /*...*/
 }
+```
+
++++
+
+### Bogenschießen Hauptprogramm
+
+Erstelle mithilfe der Vorlange die Programmstruktur für das Spiel "Bogenschießen"
+
++++
+
+##### Hinweise
+
+Computerspiele werden mit einer Art Endlosschleife (Game-Loop) realisiert, bei
+der in jedem Schleifendurchlauf jeweils ein neues Bild in das Ausgabefenster
+gezeichnet wird. Bevor das Bild gezeichnet wird, werden jeweils die
+Positionen aller Gegenstände in der Schleife aktualisiert und auf
+Tastaturanfragen reagiert.
+
+Beispiel:
+
+```
+Für jeden Schleifendurchlauf:
+    reagiere auf Tastaturanfragen
+    aktualisiere Variablen/Positionen der Gegenstände
+    zeichne Bild in Abhängigkeit der Variablen
+```
+
++++
+
+##### Vorlage
+
+```java
+// TIPP:
+// Erstelle die Startfunktion setup zu beginn und teste jede Funktion,
+// nachdem du sie erstellt hast, auf
+// sinnvolle Ergebnisse.
+
+
+// Erstelle folgende Globalen Variablen.
+// Achte auf sinnvolle Datentypen
+
+// Konstanten
+/*...*/ // g, mit dem Wert 9.81 für die Fallbeschleunigung
+/*...*/ // soilY, mit dem Wert 520 (Position, an der der Boden beginnt)
+/*...*/ // grassY, mit dem Wert 500 (Position, an der die Wiese beginnt)
+
+// Pfeilstartposition
+/*...*/ // startX, mit dem Wert 60
+/*...*/ // startY, welcher sich 40 über grassY befindet
+
+/*...*/ // aimWidth, mit dem Wert 30 (Breite des Ziels)
+/*...*/ // aimHeight, mit dem Wert 70 (Höhe des Ziels)
+
+// Globale Variablen setzen
+/*...*/ // speed, mit dem Wert 90
+/*...*/ // angle, mit dem Wert 45.0f
+/*...*/ // arrowX, mit dem Wert startX
+/*...*/ // arrowY, mit dem Wert startY
+/*...*/ // arrowDegrees, mit dem Wert angle
+/*...*/ // arrowFire, mit dem Wert false (wurde der Pfeil abgefeuert?)
+/*...*/ // arrowTime, mit dem Wert 1.0f
+/*...*/ // aimX, mit dem Wert 0 (Position x des Ziels)
+/*...*/ // aimY, mit dem Wert 0 (Position y des Ziels)
+
+// Erstelle eine Funktion reset, welche keinen Parameter und
+// keinen Rückgabewert hat. Diese Funktion (re-)initialisiert
+// die globalen Variablen
+
+// aimX (Zielposition) soll zufällig mit einem
+// Zahlenraum von width - 300 bis width generiert werden
+
+// aimY soll so gesetzt werden, dass das Ziel sich
+// auf der Wiese befindet
+/*...*/
+
+
+// Funktion zur Ausgabe von Koordinaten der Wurfparabel zum
+// angeforderten Zeitpunkt.
+// An die Funktion wird die Geschwindigkeit als Integer-Wert
+// sowie der Winkel und den Zeitpunkt je als Fließkommazahl
+// gegeben. Die Rückgabe erfolgt als Fließkomma-Array
+float[] getTrajectory(int v0, float beta, float t) {
+  // Berechne die x und y Koordinaten (Pfeilflugbahn) abhängig von t (Zeit)
+  /*...*/
+
+  float[] output = {
+  x,
+  y
+  };
+  return output;
+}
+
+// Kopiere die in der vorherigen Übung erstelle Funktion zur Berechnung
+// des Steigungswinkels an diese Stelle
+
+// Funktion getDegrees zur Berechnung des Steigungswinkels des Pfeils
+// (1. Ableitung) als Fließkommazahl zurück
+/*...*/
+
+// Erstelle die Funktion increaseSpeed, welche keinen Parameter
+// und keinen Rückgabewert hat.
+// Diese Funktion soll die Variable speed erhöhen, wenn der Pfeil noch
+// nicht abgeschossen wurde
+/*...*/
+
+// Erstelle die Funktion decreaseSpeed, welche keinen Parameter
+// und keinen Rückgabewert hat.
+// Diese Funktion soll die Variable speed verringern, wenn der Pfeil noch
+// nicht abgeschossen wurde und die aktuelle Geschwindigkeit größer als 0 ist
+/*...*/
+
+// Erstelle die Funktion increaseAngle, welche keinen Parameter
+// und keinen Rückgabewert hat.
+// Diese Funtion soll die Variable angle erhöhen, wenn der Winkel kleiner
+// als 90 Grad ist und der Pfeil noch nicht abgeschossen wurde.
+// Außerdem soll der Winkel des Pfeils dem neuen Winkel entsprechen.
+/*...*/
+
+// Erstelle die Funktion decreaseAngle, welche keinen Parameter
+// und keinen Rückgabewert hat.
+// Diese Funtion soll die Variable angle verringern, wenn der Winkel größer
+// als -90 Grad ist und der Pfeil noch nicht abgeschossen wurde.
+// Außerdem soll der Winkel des Pfeils dem neuen Winkel entsprechen.
+/*...*/
+
+// Erstelle die Funktion keyPressed, welche keinen Parameter
+// und keinen Rückgabewert hat.
+// In der Funktion soll auf Tastatureingaben reagiert werden.
+// Nutze dafür die von Processing bereitgestellten
+// globalen Variablen keyCode und key.
+
+// Es soll folgendermaßen reagiert werden:
+// Pfeiltaste rechts -> rufe Funktion increaseSpeed auf
+// Pfeiltaste links -> rufe Funktion decreaseSpeed auf
+// Pfeiltaste oben -> rufe Funktion increaseAngle auf
+// Pfeiltaste unten -> rufe Funktion decreaseAngle auf
+// Taste Enter -> setze die Variable arrowFire auf true
+// Taste r -> rufe Funktion reset auf
+/*...*/
+
+
+// Erstelle eine Funktion isInBounds, welche die Parameter x und y als
+// Float Zahlen erhält. Es soll ein Boolean zurückgegeben werden.
+// In der Funktion soll überprüft werden, ob die aktuelle Koordinate
+// im Kollisionsberech (Boden oder Ziel) liegt.
+
+// Gebe true zurück, wenn der Pfeil (x und y Koordinaten)
+// das Ziel (aimX, aimY, aimWidth, aimHeight) berührt
+// oder er auf dem Boden (soilY) gelandet ist. Ansonsten gebe
+// false zurück
+/*...*/
+
+// Erstelle eine Funktion checkCollision, welche keinen Parameter
+// und keinen Rückgabewert hat.
+// Die Funktion soll überprüfen, ob der Pfeil sich im Kollisionsbereich
+// befindet.
+// Rufe dafür die eben erstellte Funktion isInBounds mit der
+// x und y Position des Pfeils auf. Wenn isInBounds true zurück gibt (der Pfeil
+// kollidiert ist), setze die Variable arrowFire auf false, um das aktuelle Spiel
+// zu beenden.
+/*...*/
+
+// Funktion zum Aktualisieren der Pfeilposition
+// Keine Ein- oder Ausgabeparameter, da die Funktion
+// auf den globalen Variablen rechnet.
+
+// Schaue dir die Verwendung der Array Variablen newPos an und
+// lies im Internet und der Referenz nach, was ein Array ist.
+void updateArrow() {
+  // Nur aktualisieren, wenn Pfeil abgefeuert wurde
+  if (arrowFire == true) {
+    // Hole Wurfparabel
+    float[] newPos = getTrajectory(speed, angle, arrowTime);
+    arrowDegrees = getDegrees(speed, angle, arrowTime);
+
+    // Berechne neue Pfeilposition mit Wurfparabel
+    arrowX = startX + newPos[0];
+    arrowY = startY - newPos[1];
+
+    // Erhöhe Berechnungszeit der Wurfparabel
+    arrowTime = arrowTime + 0.1;
+    checkCollision();
+  }
+}
+
+// Startpunkt des Programms
+// Hier wird die implementierte Funktion zu Demonstrations- und
+// Testzwecken aufgerufen.
+
+// Erstelle die Funktion setup, welche keinen Parameter und keinen
+// Rückgabewert hat.
+// Initialisiere die größe des Ausgabefensters mit 1200x600
+// und rufe die Funktion reset auf.
+/*...*/
+
+// Erstelle die Funktion draw, welche keinen Parameter und keinenn
+// Rückgabewert hat.
+// Processing ruft diese Funktion für jedens Frame zum (Neu-)Zeichnen des
+// Bildschirminhalts auf
+/*...*/
+  // In der Funktion draw:
+
+  // Lösche den Bildschirm mit der clear Funktion
+  /*...*/
+
+  // Setze die Hindergrundfarbe auf weiß
+  /*...*/
+
+  // Setze die Füllfarbe auf schwarz
+  /*...*/
+
+  // Setze die Textgröße auf 20
+  /*...*/
+
+  // Zeichne die Variablenangaben (oben links) mithilfe der
+  // Processing Funktion text und den Variablen speed, angle
+  // z.B.: speed: 90
+  //       angle: 45
+  /*...*/
+
+  // Überprüfe ob der Pfeil im Kollisionsbereich ist
+  // nutze dafür die Funktion checkCollision
+  /*...*/
+
+  // Überprüfe ob der Pfeil im Kollisionsbereich ist
+  // Nutze dafür die Funktion checkCollision
+  /*...*/
+
+  // Aktualisiere die Pfeilposition
+  // Nutze dafür die Funktion updateArrow
+  /*...*/
+
+  // Zeichne die Wiese  mithilfe der Processing Funktion rect
+  // und den Variablen grassY, soilY, width
+  /*...*/
+
+  // Zeichne den Boden mithilfe der Processing Funktion rect
+  // und den Variablen soilY, width
+  /*...*/
+
+  // Zeichne die Zielscheibe mithilfe der Processing Funktion
+  // rect und den Variablen aimX, aimY, aimWidth, aimHeight
+  /*...*/
+
+  // Zeichne den Pfeil mithilfe der Processing Funktion line
+  // und den Variablen arrowX, arrowY, arrowDegrees
+  // Berechne die Koordinaten des Pfeilendes mithilfe eines Kreises
+  // und Trigonometrischen Funktionen,
+  // welcher arrowX und arrowY als Mittelpunk hat.
+  // Die Pfeillänge (Kreis Radius) soll 80 betragen
+  // Achtung: zur Berechnung muss der Winkel des Pfeils (arrowDegress)
+  // in radians umgerechnet werden.
+  /*...*/
+
 ```
 
 ---
