@@ -4,5 +4,7 @@
 }
 
 .reveal pre code {
+	max-height: 600px;
 	font-size: 0.7em;
+	overflow: auto;
 }
