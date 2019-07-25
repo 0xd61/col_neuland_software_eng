@@ -8,7 +8,7 @@
 
 - [Referenz](https://processing.org/reference/Array.html)
 
----
++++
 
 ## Eigenschaften
 
@@ -18,7 +18,7 @@
 - Werte werden mittels Index abgeändert oder abgefragt
 - Ein Index startet bei 0
 
----
++++
 
 ### Beispiel
 
@@ -28,7 +28,7 @@ koordinaten[3] = wert;
 wert = koordinaten[3];
 ```
 
----
++++
 
 ### Variabler Index
 
@@ -38,7 +38,7 @@ for(int i=0; i < anzahlWerte; i++) {
 }
 ```
 
----
++++
 
 ## Deklaration/Speicher Allokierung
 
@@ -47,7 +47,7 @@ for(int i=0; i < anzahlWerte; i++) {
 - Anders als bei bisher bekannten Datentypen muss für Arrays Speicher
   reserviert/allokiert werden
 
----
++++
 
 ### Beispiel
 
@@ -64,7 +64,7 @@ int[] koordinaten = new int[15]; // alles in einem Schritt
 String[] farben = {"rot", "gelb", "grün"}
 ```
 
----
++++
 
 ## Dimensionen
 
@@ -76,7 +76,7 @@ String[] farben = {"rot", "gelb", "grün"}
 int[][] koordinaten = new int[anzahlX][anzahlY]
 ```
 
----
++++
 
 ## Länge
 
@@ -86,11 +86,11 @@ int[][] koordinaten = new int[anzahlX][anzahlY]
 int anzahlElemente = koordinaten.length;
 ```
 
-+++
+---
 
 # Übungen
 
----
++++
 
 ## Tankfüllung
 
@@ -102,7 +102,7 @@ wir mit einer Tankfüllung fahren können.
 [123, 134, 120, 122] -> 124.75
 ```
 
----
++++
 
 ## Tipps
 
@@ -110,7 +110,7 @@ wir mit einer Tankfüllung fahren können.
 - Berechne den Mittelwert (Summe / Anzahl der Werte)
 - Achte auf die richtigen Datentypen
 
----
++++
 
 ## Hilfe
 
@@ -146,5 +146,3 @@ wir mit einer Tankfüllung fahren können.
 // Funktion averageFuelComsumption in der Console ausgibt
 /*...*/
 ```
-
----
