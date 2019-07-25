@@ -19,6 +19,10 @@ logo-postion : top-left
 # Doc: https://gitpitch.com/docs/settings/layout
 #
 layout : center
+highlight : ir-black
+
+# Behavior
+transition : none
 
 #
 # Footnote Setting
