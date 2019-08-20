@@ -162,6 +162,7 @@ z.B. Hallo -> ollaH
 
 - du kannst den Array rückwärts oder vorwärts durchgehen. Beim letzteren
   benötigst du wahrscheinlich eine Hilfsvariable.
+- jeder Array hat eine `length` Variable ([Referenz](https://processing.org/reference/Array.html))
 
 ##### Hilfe
 
