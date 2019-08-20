@@ -104,7 +104,7 @@ wir mit einer Tankfüllung fahren können.
 
 +++
 
-## Tipps
+###### Tipps
 
 - Summiere alle Kilometer
 - Berechne den Mittelwert (Summe / Anzahl der Werte)
@@ -112,7 +112,7 @@ wir mit einer Tankfüllung fahren können.
 
 +++
 
-## Hilfe
+###### Hilfe
 
 ```java
 // Funktion zur Berechnung des durchschnittlichen Verbrauchs
@@ -145,4 +145,46 @@ wir mit einer Tankfüllung fahren können.
 // Erstelle die Funktion setup, welche das Ergebnis der
 // Funktion averageFuelComsumption in der Console ausgibt
 /*...*/
+```
+
++++
+
+## Rückwärtsausgabe
+
+Programmiere eine Funktion, welche Wörter rückwärts schreibt. Dabei soll ihr ein
+Char-Array übergeben werden, welcher die Buchstaben rückwärts in der Konsole ausgiebt.
+
+z.B. Hallo -> ollaH
+
++++
+
+##### Tipps
+
+- du kannst den Array rückwärts oder vorwärts durchgehen. Beim letzteren
+  benötigst du wahrscheinlich eine Hilfsvariable.
+
+##### Hilfe
+
+```java
+// Programmiere die Funktion printBackwards, welche keinen Rückgabewert
+// hat und als Parameter einen char-Array erhält.
+// Die Funktion soll den übergeben char-Array in der
+// umgekehrten Reihenfolge in der Konsole ausgeben.
+/*...*/
+
+// Startpunkt des Hauptprogramms
+// Hier wird die implementierte Funktion zu Demonstrations- und
+// Testzwecken aufgerufen.
+void setup() {
+  // Char Array mit Test Daten
+  char[] palindrom =
+    {'r', 'e', 'i', 'b', 'n', 'i', 'e', 'e', 'i', 'n', 'b', 'i', 'e', 'r'};
+
+  // Char Array mit Test Daten
+  char[] test = {'H', 'a', 'l', 'l', 'o'};
+
+  // Hier wird die Funktion printBackwards mit dem entsprechenden Parameter übergeben
+  printBackwards(palindrom);
+  printBackwards(test);
+}
 ```
