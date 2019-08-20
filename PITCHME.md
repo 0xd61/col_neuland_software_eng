@@ -164,6 +164,8 @@ z.B. Hallo -> ollaH
   benötigst du wahrscheinlich eine Hilfsvariable.
 - jeder Array hat eine `length` Variable ([Referenz](https://processing.org/reference/Array.html))
 
++++
+
 ##### Hilfe
 
 ```java
