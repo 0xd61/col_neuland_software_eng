@@ -186,7 +186,7 @@ void setup() {
   // Char Array mit Test Daten
   char[] test = {'H', 'a', 'l', 'l', 'o'};
 
-  // Hier wird die Funktion printBackwards mit dem entsprechenden Parameter übergeben
+  // Hier wird die Funktion printBackwards mit dem entsprechenden Parameter aufgerufen
   printBackwards(palindrom);
   printBackwards(test);
 }
