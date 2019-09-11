@@ -191,3 +191,66 @@ void setup() {
   printBackwards(test);
 }
 ```
+
++++
+
+## Bildvergrößerung
+
+Digitale Bilder werden in der Regel durch Bildelemente, sogenannte Pixel,
+unterteilt und dargestellt. Jedes Pixel beschreibt dabei einen Farbton an einer
+festgelegten Stelle. Es ist also ein großes Array, in denen verschiedene Zahlen
+(die Farbwerte) gespeichert sind. Pixel werden meist quadratisch dargestellt. In
+dieser Aufgabe werden wir zwei Farben im Bild-Array speichern: schwarz und weiß.
+Eine typische Anwendung in Bildbearbeitungssoftware ist die Bildvergrößerung,
+welche wir hier programmieren wollen.
+
++++
+
+Programmiere ein Programm, welches einen zweidimensionales Array um einen
+Ganzzahligen Faktor f vergrößert. Dieser Faktor ist größer als 1. Das Array ist
+quadratisch und besteht aus `boolean`-Werten.
+Stelle die Vergrößerung grafisch in einer separaten Funktion dar.
+
++++
+
+![Bildvergroesserung](./assets/img/Bildvergroesserung.png)
+
++++
+
+##### Tipps:
+
+- Mache dir eine Papier skizze, damit zu weißt welche Werte vom Ausgangbild wo
+  stehen müssen.
+- Du benötigst eine 4-Fach verschachtelte Schleife
+  - Iteration durch Zeilen
+  - Iteration durch Spalten
+  - Iteration für den Zeilenfaktor
+  - Iteration für den Spaltenfaktor
+
+##### Hilfe
+
+```java
+// Erstelle die Funktion magnify, welche ein Zweidimensionales Boolean-Array
+// input und einen Ganzzahlingen Vergrößerungsfaktor f als Parameter erhält.
+// Der Rückgabetyp ist ebenfalls ein Zeidimensionales Boolean-Array.
+
+/*...*/
+
+// Erstelle die Funkion drawArray, welche ein Zweidimensionales Booles-Array
+// als Parameter erhält und keine Rückgabetyp hat.
+// Die Funktion soll das vergrößerte Array Grafisch darstellen.
+// Die Rechteckgrößen sollen dabei durch die Ausgabefenstergröße bestimmt
+// werden.
+
+/*...*/
+
+// Startpunkt des Hauptprogramms
+// Hier wird die implementierte Funktion zu Demonstrations- und
+// Testzwecken aufgerufen.
+void setup() {
+  size(200, 200);
+  background(255);
+  boolean[][] input = {{true, false}, {false, false}};
+  drawArray(magnify(input, 1));
+}
+```
