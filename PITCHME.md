@@ -227,6 +227,8 @@ Stelle die Vergrößerung grafisch in einer separaten Funktion dar.
   - Iteration für den Zeilenfaktor
   - Iteration für den Spaltenfaktor
 
++++
+
 ##### Hilfe
 
 ```java
