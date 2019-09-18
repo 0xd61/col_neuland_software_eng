@@ -332,5 +332,21 @@ Ergebnis:
 ##### Hilfe
 
 ```java
+// Erstelle die Funktion getPosInAlphabet, welche die Position
+// eines Buchstaben im Alphabet zurück gibt
+// Schaue dir dafür die Funktoin indexOf in der Referenz an
+/*...*/
+
+// Erstelle die Funktion printMorseCode, welche den
+// Morsecode für einen Eingabetext ausgibt.
+/*...*/
+
+// Startpunkt des Hauptprogramms
+// Hier wird die implementierte Funktion zu Demonstrations- und
+// Testzwecken aufgerufen.
+void setup() {
+  printMorseCode("Wozu Worte drucken, es gibt doch Schreiber");
+}
+
 
 ```
