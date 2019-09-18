@@ -256,3 +256,81 @@ void setup() {
   drawArray(magnify(input, 1));
 }
 ```
+
++++
+
+### Morsecode
+
+Schreibe ein Programm, welches Zeichenketten in Morsezeichen codiert.
+
++++
+
+##### Beispiel
+
+```
+Text:
+wozuwortedruckenesgibtdochschreiber
+
+Ergebnis:
+ .-- --- --.. ..- .-- --- .-. - . -.. .-. ..- -.-. -.- . -. . ... --. ..-... - -.. --- -.-. .... ... -.-. .... .-. . .. -... . .-.
+```
+
++++
+
+##### Morse Alphabet
+
+```java
+".-",     // A
+"-...",   // B
+"-.-.",   // C
+"-..",    // D
+".",      // E
+"..-.",   // F
+"--.",    // G
+"....",   // H
+"..",     // I
+".---",   // J
+"-.-",    // K
+".-..",   // L
+"--",     // M
+"-.",     // N
+"---",    // O
+".--.",   // P
+"--.-",   // Q
+".-.",    // R
+"...",    // S
+"-",      // T
+"..-",    // U
+"...-",   // V
+".--",    // W
+"-..-",   // X
+"-.--",   // Y
+"--..",   // Z
+".----",  // 1
+"..---",  // 2
+"...--",  // 3
+"....-",  // 4
+".....",  // 5
+"-....",  // 6
+"--...",  // 7
+"---..",  // 8
+"----.",  // 9
+"-----"   // 0
+```
+
++++
+
+##### Tipps
+
+- ein selbst erstelltes "Nachschlagewerk" mit den Codes ist sinnvoll
+- Entferne zunächst alle Leerzeichen und wandle alle Großbuchstaben in
+  Kleinbuchstaben um
+- Gehe jedes Zeichen einzeln durch und ersetze es mit dem zugehörigen Morsezeichen
+
++++
+
+##### Hilfe
+
+```java
+
+```
