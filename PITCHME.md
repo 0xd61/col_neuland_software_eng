@@ -269,7 +269,8 @@ Schreibe ein Programm, welches Zeichenketten in Morsezeichen codiert.
 
 ```
 Text:
-wozuwortedruckenesgibtdochschreiber
+Wozu Worte drucken, es gibt doch Schreiber
+ -> wozuwortedruckenesgibtdochschreiber
 
 Ergebnis:
  .-- --- --.. ..- .-- --- .-. - . -.. .-. ..- -.-. -.- . -. . ... --. ..-... - -.. --- -.-. .... ... -.-. .... .-. . .. -... . .-.
