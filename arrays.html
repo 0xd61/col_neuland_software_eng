@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Arrays</title>
+    <meta name="author" content="(Daniel Glinka)" />
+    <style type="text/css">
+      .underline {
+        text-decoration: underline;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/black.css"
+      id="theme"
+    />
+
+    <link rel="stylesheet" href="./local.css" />
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if (window.location.search.match(/print-pdf/gi)) {
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        link.href = "https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css";
+        document.getElementsByTagName("head")[0].appendChild(link);
+      }
+    </script>
+    <meta name="description" content="Colegio Neuland" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section id="sec-title-slide">
+          <h1>Software Engineering</h1>
+          <h2>Colegio Neuland</h2>
+          <p>by Daniel Glinka</p>
+        </section>
+
+        <section>
+          <section id="slide-org335eb22">
+            <h2 id="org335eb22">Arrays</h2>
+            <ul>
+              <li>
+                <a href="https://processing.org/reference/Array.html"
+                  >Referenz</a
+                >
+              </li>
+            </ul>
+          </section>
+          <section id="slide-org38bfafd">
+            <h3 id="org38bfafd">Eigentschaften</h3>
+            <ul>
+              <li>Datentyp</li>
+              <li>Speichert eine Menge von Werten</li>
+              <li>Elemente haben gleichen Datentyp</li>
+              <li>Werte werden mittels Index abgeändert oder abgefragt</li>
+              <li>Ein Index startet bei 0</li>
+            </ul>
+          </section>
+          <section id="slide-org048f472">
+            <h4 id="org048f472">Beispiel</h4>
+            <div class="org-src-container">
+              <pre
+                class="src src-java"
+              ><code trim><code>koordinaten[<span style="color: #da8548; font-weight: bold;">3</span>] = wert;</code>
+<code></code>
+<code>wert = koordinaten[<span style="color: #da8548; font-weight: bold;">3</span>];</code>
+</code></pre>
+            </div>
+          </section>
+          <section id="slide-org2735c05">
+            <h4 id="org2735c05">Variabler Index</h4>
+            <div class="org-src-container">
+              <pre
+                class="src src-java"
+              ><code trim><code><span style="color: #51afef;">for</span>(<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span>=<span style="color: #da8548; font-weight: bold;">0</span>; i &lt; <span style="color: #ECBE7B;">anzahlWerte</span>; i++) {</code>
+<code>  koordinaten[i] = initialerWert;</code>
+<code>}</code>
+</code></pre>
+            </div>
+          </section>
+          <section id="slide-org69553a4">
+            <h3 id="org69553a4">Deklaration/Speicher Allokierung</h3>
+            <ul>
+              <li>Erstellt einen neuen Array</li>
+              <li>Gibt den Datentyp des Arrays vor</li>
+              <li>
+                Anders als bei bisher bekannten Datentypen muss für Arrays
+                Speicher reserviert/allokiert werden
+              </li>
+            </ul>
+          </section>
+          <section id="slide-orgcd38434">
+            <h4 id="orgcd38434">Beispiel</h4>
+            <div class="org-src-container">
+              <pre
+                class="src src-java"
+              ><code trim><code><span style="color: #ECBE7B;">int</span>[] <span style="color: #dcaeea;">koordinaten</span>; <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Deklaration</span></code>
+<code></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Speicher Allokierung mit 15 Elementen</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Danach hat jedes der Elemente den Wert 0</span></code>
+<code>koordinaten = <span style="color: #51afef;">new</span> <span style="color: #ECBE7B;">int</span>[<span style="color: #da8548; font-weight: bold;">15</span>];</code>
+<code></code>
+<code><span style="color: #ECBE7B;">int</span>[] <span style="color: #dcaeea;">koordinaten</span> = <span style="color: #51afef;">new</span> <span style="color: #ECBE7B;">int</span>[<span style="color: #da8548; font-weight: bold;">15</span>]; <span style="color: #5B6268;">// </span><span style="color: #5B6268;">alles in einem Schritt</span></code>
+<code></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Deklaration und Allokierung mit festgelegten Werten</span></code>
+<code><span style="color: #ECBE7B;">String</span>[] <span style="color: #dcaeea;">farben</span> = {<span style="color: #98be65;">"rot"</span>, <span style="color: #98be65;">"gelb"</span>, <span style="color: #98be65;">"gr&#252;n"</span>}</code>
+</code></pre>
+            </div>
+          </section>
+          <section id="slide-org8d8fdca">
+            <h3 id="org8d8fdca">Dimensionen</h3>
+            <ul>
+              <li>Arrays können mehrere Dimensionen haben</li>
+              <li>z.B. Koordinaten mit x und y</li>
+            </ul>
+            <div class="org-src-container">
+              <pre
+                class="src src-java"
+              ><code trim><code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Zweidimensionaler Array</span></code>
+<code><span style="color: #ECBE7B;">int</span>[][] <span style="color: #dcaeea;">koordinaten</span> = <span style="color: #51afef;">new</span> <span style="color: #ECBE7B;">int</span>[anzahlX][anzahlY]</code>
+</code></pre>
+            </div>
+          </section>
+          <section id="slide-org9c8297c">
+            <h3 id="org9c8297c">Länge</h3>
+            <ul>
+              <li>
+                Ein Array hat automatisch die Eigenschaft <code>length</code>
+              </li>
+            </ul>
+
+            <div class="org-src-container">
+              <pre
+                class="src src-java"
+              ><code trim><code><span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">anzahlElemente</span> = koordinaten.length;</code>
+</code></pre>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section id="slide-org18e8ea2">
+            <h2 id="org18e8ea2">Übungen</h2>
+            <div class="outline-text-2" id="text-org18e8ea2"></div>
+          </section>
+          <section id="slide-org73caad9">
+            <h3 id="org73caad9">Tankfüllung</h3>
+            <p>
+              Schreibe eine Funktion, die ein Array mit verschiedenen
+              <code>int</code>-Werten übergeben bekommt und daraus die
+              durchschnittliche Anzahl an Kilometern zurückgibt, die wir mit
+              einer Tankfüllung fahren können.
+            </p>
+
+            <div class="org-src-container">
+              <pre
+                class="src src-java"
+              ><code trim><code>[<span style="color: #da8548; font-weight: bold;">123</span>, <span style="color: #da8548; font-weight: bold;">134</span>, <span style="color: #da8548; font-weight: bold;">120</span>, <span style="color: #da8548; font-weight: bold;">122</span>] -&gt; <span style="color: #da8548; font-weight: bold;">124.75</span></code>
+</code></pre>
+            </div>
+          </section>
+          <section id="slide-org0600879">
+            <h4 id="org0600879">Tipps</h4>
+            <ul>
+              <li>Summiere alle Kilometer</li>
+              <li>Berechne den Mittelwert (Summe / Anzahl der Werte)</li>
+              <li>Achte auf die richtigen Datentypen</li>
+            </ul>
+          </section>
+          <section id="slide-orgdac6952">
+            <h4 id="orgdac6952">Hilfe</h4>
+            <div class="org-src-container">
+              <pre
+                class="src src-java"
+              ><code trim><code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Funktion zur Berechnung des durchschnittlichen Verbrauchs</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">An die Funktion wird ein Array mit Integer-Werten &#252;bergeben,</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">die die gefahrenen Kilometer bis zum n&#228;chsten Tankstopp</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">enthalten. Die Funktion gibt den Durchschnittswert als</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Flie&#223;kommazahl zur&#252;ck.</span></code>
+<code></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Erstelle eine Funktion averageFuelComsumption welche den Array</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">kilometersPerTankful als Parameter erh&#228;lt</span></code>
+<code><span style="color: #5B6268;">/* </span><span style="color: #5B6268;">... */</span></code>
+<code></code>
+<code>  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Initialisierung der Variablen averageConsumption und</span></code>
+<code>  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">sumKilometers f&#252;r die Berechnung des Mittelwerts</span></code>
+<code>  <span style="color: #5B6268;">/*</span><span style="color: #5B6268;">...*/</span></code>
+<code></code>
+<code>  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Summiere alle Kilometer</span></code>
+<code>  <span style="color: #5B6268;">/*</span><span style="color: #5B6268;">...*/</span></code>
+<code></code>
+<code>  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Teile durch Gesamtzahl</span></code>
+<code>  <span style="color: #5B6268;">/*</span><span style="color: #5B6268;">...*/</span></code>
+<code></code>
+<code>  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">R&#252;ckgabe des Ergebnisses</span></code>
+<code>  <span style="color: #5B6268;">/*</span><span style="color: #5B6268;">...*/</span></code>
+<code></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Startpunkt des Hauptprogramms</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Hier wird die implementierte Funktion zu Demonstrations- und</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Testzwecken aufgerufen.</span></code>
+<code></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Erstelle die Funktion setup, welche das Ergebnis der</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Funktion averageFuelComsumption in der Console ausgibt</span></code>
+<code><span style="color: #5B6268;">/*</span><span style="color: #5B6268;">...*/</span></code>
+<code></code>
+</code></pre>
+            </div>
+          </section>
+          <section id="slide-org54be3da">
+            <h3 id="org54be3da">Rückwärtsausgabe</h3>
+            <p>
+              Programmiere eine Funktion, welche Wörter rückwärts schreibt.
+              Dabei soll ihr ein Char-Array übergeben werden, welcher die
+              Buchstaben rückwärts in der Konsole ausgiebt.
+            </p>
+
+            <pre class="example">
+<code>Hallo -&gt; ollaH</code>
+</pre>
+          </section>
+          <section id="slide-orgc645252">
+            <h4 id="orgc645252">Tipps</h4>
+            <ul>
+              <li>
+                du kannst den Array rückwärts oder vorwärts durchgehen. Beim
+                letzteren benötigst du wahrscheinlich eine Hilfsvariable.
+              </li>
+              <li>
+                jeder Array hat eine <code>length</code> Variable (<a
+                  href="https://processing.org/reference/Array.html"
+                  >Referenz</a
+                >)
+              </li>
+            </ul>
+          </section>
+          <section id="slide-orgce6edb7">
+            <h4 id="orgce6edb7">Hilfe</h4>
+            <div class="org-src-container">
+              <pre
+                class="src src-java"
+              ><code trim><code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Programmiere die Funktion printBackwards, welche keinen R&#252;ckgabewert</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">hat und als Parameter einen char-Array erh&#228;lt.</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Die Funktion soll den &#252;bergeben char-Array in der</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">umgekehrten Reihenfolge in der Konsole ausgeben.</span></code>
+<code><span style="color: #5B6268;">/*</span><span style="color: #5B6268;">...*/</span></code>
+<code></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Startpunkt des Hauptprogramms</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Hier wird die implementierte Funktion zu Demonstrations- und</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Testzwecken aufgerufen.</span></code>
+<code><span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">setup</span>() {</code>
+<code>  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Char Array mit Test Daten</span></code>
+<code>  <span style="color: #ECBE7B;">char</span>[] <span style="color: #dcaeea;">palindrom</span> =</code>
+<code>    {<span style="color: #98be65;">'r'</span>, <span style="color: #98be65;">'e'</span>, <span style="color: #98be65;">'i'</span>, <span style="color: #98be65;">'b'</span>, <span style="color: #98be65;">'n'</span>, <span style="color: #98be65;">'i'</span>, <span style="color: #98be65;">'e'</span>, <span style="color: #98be65;">'e'</span>, <span style="color: #98be65;">'i'</span>, <span style="color: #98be65;">'n'</span>, <span style="color: #98be65;">'b'</span>, <span style="color: #98be65;">'i'</span>, <span style="color: #98be65;">'e'</span>, <span style="color: #98be65;">'r'</span>};</code>
+<code></code>
+<code>  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Char Array mit Test Daten</span></code>
+<code>  <span style="color: #ECBE7B;">char</span>[] <span style="color: #dcaeea;">test</span> = {<span style="color: #98be65;">'H'</span>, <span style="color: #98be65;">'a'</span>, <span style="color: #98be65;">'l'</span>, <span style="color: #98be65;">'l'</span>, <span style="color: #98be65;">'o'</span>};</code>
+<code></code>
+<code>  <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Hier wird die Funktion printBackwards mit dem entsprechenden Parameter aufgerufen</span></code>
+<code>  printBackwards(palindrom);</code>
+<code>  printBackwards(test);</code>
+<code>}</code>
+</code></pre>
+            </div>
+          </section>
+          <section id="slide-org87de3d8">
+            <h3 id="org87de3d8">Bildvergrößerung</h3>
+            <p>
+              Digitale Bilder werden in der Regel durch Bildelemente, sogenannte
+              Pixel, unterteilt und dargestellt. Jedes Pixel beschreibt dabei
+              einen Farbton an einer festgelegten Stelle. Es ist also ein großes
+              Array, in denen verschiedene Zahlen (die Farbwerte) gespeichert
+              sind. Pixel werden meist quadratisch dargestellt. In dieser
+              Aufgabe werden wir zwei Farben im Bild-Array speichern: schwarz
+              und weiß. Eine typische Anwendung in Bildbearbeitungssoftware ist
+              die Bildvergrößerung, welche wir hier programmieren wollen.
+            </p>
+          </section>
+          <section id="slide-org87de3d8-split">
+            <p>
+              Programmiere ein Programm, welches einen zweidimensionales Array
+              um einen Ganzzahligen Faktor f vergrößert. Dieser Faktor ist
+              größer als 1. Das Array ist quadratisch und besteht aus
+              <code>boolean</code>-Werten. Stelle die Vergrößerung grafisch in
+              einer separaten Funktion dar.
+            </p>
+          </section>
+          <section id="slide-org87de3d8-split">
+            <div class="figure">
+              <p>
+                <img
+                  src="./assets/img/Bildvergroesserung.png"
+                  alt="Bildvergroesserung.png"
+                />
+              </p>
+            </div>
+          </section>
+          <section id="slide-orgec85918">
+            <h4 id="orgec85918">Tipps</h4>
+            <ul>
+              <li>
+                Mache dir eine Papier skizze, damit zu weißt welche Werte vom
+                Ausgangbild wo stehen müssen.
+              </li>
+              <li>
+                Du benötigst eine 4-Fach verschachtelte Schleife
+                <ul>
+                  <li>Iteration durch Zeilen</li>
+                  <li>Iteration durch Spalten</li>
+                  <li>Iteration für den Zeilenfaktor</li>
+                  <li>Iteration für den Spaltenfaktor</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section id="slide-org58858b6">
+            <h4 id="org58858b6">Hilfe</h4>
+            <div class="org-src-container">
+              <pre
+                class="src src-java"
+              ><code trim><code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Erstelle die Funktion magnify, welche ein Zweidimensionales Boolean-Array</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">input und einen Ganzzahlingen Vergr&#246;&#223;erungsfaktor f als Parameter erh&#228;lt.</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Der R&#252;ckgabetyp ist ebenfalls ein Zeidimensionales Boolean-Array.</span></code>
+<code></code>
+<code><span style="color: #5B6268;">/*</span><span style="color: #5B6268;">...*/</span></code>
+<code></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Erstelle die Funkion drawArray, welche ein Zweidimensionales Booles-Array</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">als Parameter erh&#228;lt und keine R&#252;ckgabetyp hat.</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Die Funktion soll das vergr&#246;&#223;erte Array Grafisch darstellen.</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Die Rechteckgr&#246;&#223;en sollen dabei durch die Ausgabefenstergr&#246;&#223;e bestimmt</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">werden.</span></code>
+<code></code>
+<code><span style="color: #5B6268;">/*</span><span style="color: #5B6268;">...*/</span></code>
+<code></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Startpunkt des Hauptprogramms</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Hier wird die implementierte Funktion zu Demonstrations- und</span></code>
+<code><span style="color: #5B6268;">// </span><span style="color: #5B6268;">Testzwecken aufgerufen.</span></code>
+<code><span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">setup</span>() {</code>
+<code>  size(<span style="color: #da8548; font-weight: bold;">200</span>, <span style="color: #da8548; font-weight: bold;">200</span>);</code>
+<code>  background(<span style="color: #da8548; font-weight: bold;">255</span>);</code>
+<code>  <span style="color: #ECBE7B;">boolean</span>[][] <span style="color: #dcaeea;">input</span> = {{<span style="color: #a9a1e1;">true</span>, <span style="color: #a9a1e1;">false</span>}, {<span style="color: #a9a1e1;">false</span>, <span style="color: #a9a1e1;">false</span>}};</code>
+<code>  drawArray(magnify(input, <span style="color: #da8548; font-weight: bold;">1</span>));</code>
+<code>}</code>
+</code></pre>
+            </div>
+          </section>
+          <section id="slide-org8b881e8">
+            <h3 id="org8b881e8">Morsecode</h3>
+            <p>
+              Schreibe ein Programm, welches Zeichenketten in Morsezeichen
+              codiert.
+            </p>
+
+            <pre class="example">
+<code>Text:</code>
+<code>Wozu Worte drucken, es gibt doch Schreiber</code>
+<code> -&gt; wozuwortedruckenesgibtdochschreiber</code>
+<code></code>
+<code>Ergebnis:</code>
+<code> .-- --- --.. ..- .-- --- .-. - . -.. .-. ..- -.-. -.- . -. . ... --. ..-... - -.. --- -.-. .... ... -.-. .... .-. . .. -... . .-.</code>
+</pre>
+          </section>
+          <section id="slide-orgf656445">
+            <h4 id="orgf656445">Tipps</h4>
+            <ul>
+              <li>
+                ein selbst erstelltes &ldquo;Nachschlagewerk&rdquo; mit den
+                Codes ist sinnvoll
+              </li>
+              <li>
+                Entferne zunächst alle Leerzeichen und wandle alle
+                Großbuchstaben in Kleinbuchstaben um
+              </li>
+              <li>
+                Gehe jedes Zeichen einzeln durch und ersetze es mit dem
+                zugehörigen Morsezeichen
+              </li>
+            </ul>
+          </section>
+          <section id="slide-orgabea32f">
+            <h4 id="orgabea32f">Morse Alphabet</h4>
+            <pre class="example">
+<code>".-",     // A</code>
+<code>"-...",   // B</code>
+<code>"-.-.",   // C</code>
+<code>"-..",    // D</code>
+<code>".",      // E</code>
+<code>"..-.",   // F</code>
+<code>"--.",    // G</code>
+<code>"....",   // H</code>
+<code>"..",     // I</code>
+<code>".---",   // J</code>
+<code>"-.-",    // K</code>
+<code>".-..",   // L</code>
+<code>"--",     // M</code>
+<code>"-.",     // N</code>
+<code>"---",    // O</code>
+<code>".--.",   // P</code>
+<code>"--.-",   // Q</code>
+<code>".-.",    // R</code>
+<code>"...",    // S</code>
+<code>"-",      // T</code>
+<code>"..-",    // U</code>
+<code>"...-",   // V</code>
+<code>".--",    // W</code>
+<code>"-..-",   // X</code>
+<code>"-.--",   // Y</code>
+<code>"--..",   // Z</code>
+<code>".----",  // 1</code>
+<code>"..---",  // 2</code>
+<code>"...--",  // 3</code>
+<code>"....-",  // 4</code>
+<code>".....",  // 5</code>
+<code>"-....",  // 6</code>
+<code>"--...",  // 7</code>
+<code>"---..",  // 8</code>
+<code>"----.",  // 9</code>
+<code>"-----"   // 0</code>
+</pre>
+          </section>
+          <section id="slide-org37fac91">
+            <h4 id="org37fac91">Hilfe</h4>
+            <div class="org-src-container">
+              <pre class="src src-java"><code trim><code></code>
+<code></code>
+</code></pre>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+    <p>Created by with org</p>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        multiplex: {
+          secret: "", // null if client
+          id: "", // id, obtained from socket.io server
+          url: "" // Location of socket.io server
+        },
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          {
+            src: "https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js",
+            condition: function() {
+              return !document.body.classList;
+            }
+          },
+          {
+            src:
+              "https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js",
+            condition: function() {
+              return !!document.querySelector("[data-markdown]");
+            }
+          },
+          {
+            src:
+              "https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js",
+            condition: function() {
+              return !!document.querySelector("[data-markdown]");
+            }
+          },
+          {
+            src:
+              "https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js",
+            async: true,
+            condition: function() {
+              return !!document.body.classList;
+            }
+          },
+          {
+            src: "https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js",
+            async: true,
+            condition: function() {
+              return !!document.body.classList;
+            }
+          }
+        ]
+      });
+    </script>
+  </body>
+</html>
