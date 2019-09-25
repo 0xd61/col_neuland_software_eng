@@ -115,7 +115,7 @@ wir mit einer Tankfüllung fahren können.
 ** Rückwärtsausgabe
 
 Programmiere eine Funktion, welche Wörter rückwärts schreibt. Dabei soll ihr ein
-Char-Array übergeben werden, welcher die Buchstaben rückwärts in der Konsole ausgiebt.
+Char-Array übergeben werden, welcher die Buchstaben rückwärts in der Konsole ausgibt.
 
 #+BEGIN_SRC
 Hallo -> ollaH
