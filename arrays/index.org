@@ -169,7 +169,7 @@ Stelle die Vergrößerung grafisch in einer separaten Funktion dar.
 
 #+REVEAL: split
 
-[[./assets/img/Bildvergroesserung.png]]
+[[../assets/img/Bildvergroesserung.png]]
 #+NAME: Bildvergrößerung
 
 *** Tipps
