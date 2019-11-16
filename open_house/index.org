@@ -1,0 +1,15 @@
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+
+#+Title: Wahlpflichtfach - Software Entwicklung
+#+Author: Daniel Glinka
+
+#+OPTIONS: num:nil toc:nil
+#+REVEAL_THEME: black
+#+REVEAL_TITLE_SLIDE: <h1>Software Engineering</h1><h2>Colegio Neuland</h2><p>by %a</p>
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Colegio Neuland">
+#+REVEAL_POSTAMBLE: <p> Created by with org </p>
+
+* Wahlpflichtfach - Software Entwicklung
+ An einzelnen Computern ist Source Code von Programmen, welche wir im Unterricht
+ erstellt haben. Jedes Programm enthält einen Kommentar mit einer
+ Anleitung und kann durch klicken auf den "Play"-Button ausprobiert werden.
